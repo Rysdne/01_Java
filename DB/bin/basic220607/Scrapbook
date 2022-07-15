@@ -1,0 +1,9 @@
+create table member(id varchar2(14),password varchar2(10));
+
+desc member;
+
+select * from member;
+
+insert into member values('test','1234');
+
+drop table member;

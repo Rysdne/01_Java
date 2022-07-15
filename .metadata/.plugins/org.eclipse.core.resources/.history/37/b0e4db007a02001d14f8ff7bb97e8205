@@ -1,0 +1,29 @@
+package member.dao;
+
+public class MemberDAO {
+
+public MemberDAO() {
+	
+	Connection conn;
+	PreparedStatement pstmt;
+	
+	
+	try {
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		
+		
+		
+		
+		
+	} catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+	
+}
+	
+	
+}

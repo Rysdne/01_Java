@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+header{
+	background-color:orange;
+}
+main{
+	background-color:whitesmoke;
+}
+header{
+	background-color:yellowgreen;
+}

@@ -1,0 +1,37 @@
+package controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/member/*")
+public class MemberController extends HttpServlet {
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String[] uris = req.getRequestURI().split("/");
+		String page="";
+		req.setAttribute("page", page);
+		req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req, resp);
+
+		// 항상 길이 확인이 필요
+		if (uris.length == 2) {
+
+		} else {
+			if (uris[2] == "findOne") {
+				
+				
+				
+				
+				req.setAttribute("page", "main.jsp");
+				req.getRequestDispatcher("/WEB-INF/index.jsp").forward(req, resp);
+
+			}
+		}
+	}
+
+}

@@ -1,0 +1,13 @@
+package member.vo;
+
+public class MemberVO {
+
+	
+	
+	
+	public MemberVO() {
+	}
+	
+	
+	
+}

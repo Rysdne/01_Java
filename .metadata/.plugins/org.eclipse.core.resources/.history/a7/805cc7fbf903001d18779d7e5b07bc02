@@ -1,0 +1,16 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%-- pageScope(param,paramValues), requestScope, sessionScope, applicationScope --%>
+
+<c:set var="num" value="100"/>
+<%
+request.setAttribute("num","200");
+session.setAttribute("num","300");
+// request.getSession().setAttribute("num","300");
+application.setAttribute("num","400");
+// request.getServletContext().setAttribute("num","400");
+%>
+
+
+

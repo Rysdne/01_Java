@@ -1,0 +1,9 @@
+package test20220712;
+
+import javax.servlet.http.HttpServlet;
+
+public class MainController extends HttpServlet{
+
+	
+	
+}

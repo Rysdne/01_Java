@@ -1,0 +1,36 @@
+package controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import member.dao.MemberDAO;
+import member.vo.MemberVO;
+
+@WebServlet("/member/*")
+public class MemberController extends HttpServlet {
+
+	@Override
+	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+		String[] uris = req.getRequestURI().split("/");
+		String page = "main.jsp";
+
+		if (uris.length == 2) {
+		} else {
+			if (uris[2].equals("findOne")) {
+
+				MemberDAO dao = new MemberDAO();
+				MemberVO member = dao.findOne(idx);
+				System.out.println(member.toString());
+
+			}
+		}
+
+	}
+
+}

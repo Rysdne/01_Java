@@ -1,0 +1,44 @@
+package test220712;
+
+public class Cal {
+
+	private float result = 0;
+
+	public Cal() {
+	}
+
+	int sum(int a, int b;
+
+
+	
+	}
+
+	public int sub(int ain
+b) {
+
+		return 
+
+	
+	}
+
+	public int mux(int a int b) {
+
+		return a * b;
+
+	
+	}
+
+	public float div(int a, int b) {
+
+		return (float) a / b;
+	}
+
+	public float getResult() {
+		return result;
+	}
+
+	public void setResult(float result) {
+		this.result = result;
+	}
+
+}

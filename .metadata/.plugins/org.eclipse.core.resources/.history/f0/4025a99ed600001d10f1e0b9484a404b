@@ -1,0 +1,27 @@
+package test;
+
+public class Cal {
+
+	
+	String[] history;
+	
+	public Cal() {
+		history=new String[1];
+	}
+	
+	public Cal(int size) {
+		history=new String[size];
+	}
+
+	public int sum(int a, int b) {
+		StringBuilder sb=new StringBuilder();
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+}

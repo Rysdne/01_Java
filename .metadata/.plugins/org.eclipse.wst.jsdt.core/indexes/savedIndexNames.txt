@@ -1,0 +1,23 @@
+INDEX VERSION 1.4+C:\Users\Rysdne\Desktop\Rysdne\Document\01. Java\work\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1006340471.index
+1771077481.index
+2272885318.index
+1448268790.index
+478172682.index
+2152214862.index
+2733824205.index
+2906119212.index
+3088392732.index
+497601750.index
+3271193799.index
+4215696882.index
+661600371.index
+1597905533.index
+4236781736.index
+2795787554.index
+3949527849.index
+90661381.index
+3478880844.index
+2624467903.index
+2080800925.index
+525714792.index

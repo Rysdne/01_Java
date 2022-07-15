@@ -1,0 +1,17 @@
+package test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import member.dao.MemberDAO;
+
+class MemberDAOTest {
+
+	@Test
+	void test() {
+		MemberDAO dao=new MemberDAO();
+		assurt.equals(dao);
+	}
+
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function() {
+		$('#addtr')
+				.click(
+						function() {
+							$('table>tbody')
+									.prepend(
+											'<tr><td>0</td><td>홍길동0</td><td>01011111110</td><td>없음</td></tr>');
+							$('table>tbody')
+									.append(
+											'<tr><td>7</td><td>홍길동7</td><td>01011111117</td><td>없음</td></tr>');
+						});
+
+		$('#accesstd').click(function() {
+
+			//			// 체크박스로 체크하여 파일을 삭제
+			//		
+			//			// 복수의 tr에 접근하는 방법
+			// 			// 1번째
+			//			// 1-1)
+			// 			var obj='table>tbody>tr';
+			// 			var str="";
+			// 			for(var i=0;i<6;i++){
+			// 			// 기존 str에 td 열들의 값을 더함
+			// 			str=str+$(obj).eq(i).text();
+			// 			}
+			// 			document.write(str);
+			//			// 1-2)
+			// 			document.write($('table>tbody>tr').eq(0).text());
+
+			//			// 2번째
+			// 			// 2-1)
+			// 			var str="";
+			// 			for(var i=0;i<6;i++){
+			// 				// nth-child : n번째 자식
+			// 				var obj=`tbody tr:nth-child(${i})`;
+			// 				str=str+$(obj).eq(0).text();
+			// 			}
+			// 			document.write(str);
+			// 			// 2-1)
+			// 			document.write($('tbody tr:nth-child(1)').eq(0).text());
+
+			//			// 복수의 td 접근법
+			// 			// 1)
+			// 			var str="";
+			// 			for(var i=0;i<6;i++){
+			// 				// nth-child : n번째 자식
+			// 				var obj=`tbody tr:nth-child(${i}) td`;
+			// 				str=str+$(obj).eq(0).text();
+			// 			}
+			// 			document.write(str);
+			// 			// 2)
+			// 			document.write($('tbody tr:nth-child(2) td').eq(0).text());
+
+		});
+
+		// 체크박스 길이(개수)
+		$('#one').click(function() {
+			// 1)
+			var obj = $('input[type="checkbox"]');
+
+			// 			// 2)
+			// 			var obj=$('input:checkbox');
+
+			alert(obj.length);
+		});
+
+		// 체크 여부 확인
+		$('#two').click(function() {
+			var obj = $('input:checkbox')[0];
+			alert(obj.checked);
+		});
+
+		// 체크박스 값 전송
+		$('#three').click(function() {
+
+			// 			// 1) id를 통한 접근
+			// 			alert($('#ck4').val());
+
+			// 			// 2) for each를 통한 접근
+			// 			// for each : 대상 각각에 명령 적용
+			// 			var str="";
+			// 			// 체크되어있는(checked) checkboxes마다 함수를 호출
+			// 			$('input[name=checkboxes]:checked').each(function(){
+			// 				str+=$(this).val();
+			// 			});
+			// 			alert(str);
+
+			// 3) for each문을 사용하여 값을 주입
+			// 체크된 객체들에 값을 직접 입력
+			var i = 1;
+			var str = "";
+			// 체크된 애들마다 함수를 호출 
+			$('input[name=checkboxes]:checked').each(function() {
+				// i를 1씩 증가시키면서 값을 입력
+				str += $(this).val(i++);
+			});
+			alert(str);
+
+			// 			// 아래 식으로는 체크박스 내부의 value 값을 가져올 수 없음
+			//			// 배열로 접근 시도
+			// 			var obj=$('input:checkbox')[0];
+			// 			alert(obj.val());
+
+		});
+
+		// 체크박스 값 확인 
+		$('#four').click(function() {
+
+			// 객체에 대한 접근은 eq로 해야 가능
+			var obj = $('input:checkbox').eq(0);
+			alert(obj.val());
+		});
+
+	});
+</script>
+</head>
+<body>
+	<button id="addtr">addtr</button>
+	<br>
+	<button id="accesstd">td value access</button>
+	<br>
+
+	<input type="button" id="one" value="체크박스 길이">
+	<br>
+	<input type="button" id="two" value="위치 확인[체크확인]">
+	<br>
+	<input type="button" id="three" value="value 부여">
+	<br>
+	<input type="button" id="four" value="value 확인">
+	<br>
+
+	<input type="checkbox" id="ck1" name="checkboxes" value="1">1
+	<br>
+	<input type="checkbox" id="ck2" name="checkboxes">2
+	<br>
+	<input type="checkbox" id="ck3" name="checkboxes">3
+	<br>
+	<input type="checkbox" id="ck4" name="checkboxes">4
+	<br>
+	<input type="checkbox" id="ck5" name="checkboxes">5
+	<br>
+
+	<table border="1">
+
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>전화번호</th>
+				<th>메모</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>홍길동1</td>
+				<td>01011111111</td>
+				<td>없음</td>
+			</tr>
+
+			<tr>
+				<td>2</td>
+				<td>홍길동2</td>
+				<td>01011111112</td>
+				<td>없음</td>
+			</tr>
+
+			<tr>
+				<td>3</td>
+				<td>홍길동3</td>
+				<td>01011111113</td>
+				<td>없음</td>
+			</tr>
+
+			<tr>
+				<td>4</td>
+				<td>홍길동4</td>
+				<td>01011111114</td>
+				<td>없음</td>
+			</tr>
+
+			<tr>
+				<td>5</td>
+				<td>홍길동5</td>
+				<td>01011111115</td>
+				<td>없음</td>
+			</tr>
+
+			<tr>
+				<td>6</td>
+				<td>홍길동6</td>
+				<td>01011111116</td>
+				<td>없음</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<%-- paramValues는 기본적으로 갖고있기 때문에 c태그를 사용하지 않아도 됨 --%>
+<%--
+${paramValues.lang[0]}<br>
+${paramValues.lang[1]}<br>
+${paramValues.lang[2]}<br>
+${paramValues.lang[3]}<br>
+${paramValues.lang[4]}<br>
+ --%>
+
+
+<%-- taglib를 이용하여 파라메타를 출력하세요 --%>
+<%
+int count=request.getParameterValues("lang").length;
+request.setAttribute("count",count);
+%>
+
+
+<c:set var="count" value=""
+<c:forEach var="i" begin="0" end="4" step="1">
+${paramValues.lang[i]}<br>
+</c:forEach>

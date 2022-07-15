@@ -1,0 +1,28 @@
+package test;
+
+public class Cal {
+
+	
+	String[] history;
+	int position=0;
+	
+	public Cal() {
+		history=new String[1];
+	}
+	
+	public Cal(int size) {
+		history=new String[size];
+	}
+
+	public int sum(int a, int b) {
+		StringBuilder sb=new StringBuilder();
+		sb.append(a).append("+").append(b).append("=").append(a+b);
+		history[position++]=sb.toString();
+		return a+b;
+	}
+	
+	
+	
+	
+	
+}

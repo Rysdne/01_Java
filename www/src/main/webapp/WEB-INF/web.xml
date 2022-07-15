@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+	
+	<!-- ======================================================== -->
+	<!-- 필터 등록 -->
+	
+	<!-- 서버가 실행될 때 가장 먼저 실행됨 -->
+	<filter-mapping>
+	<filter-name>charEncodingFilter</filter-name>
+	<url-pattern>/*</url-pattern>
+	<!-- 모든 url에 적용 -->
+	</filter-mapping>
+	
+	<filter>
+	<filter-name>charEncodingFilter</filter-name>
+	<filter-class>jsp220621.CharEncodingFilter</filter-class>
+	</filter>
+		
+	<!-- ======================================================== -->
+	
+	<display-name>www</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+
+	<!-- ======================================================== -->
+
+	<servlet-mapping>
+		<servlet-name>message</servlet-name>
+		<url-pattern>/messageProc</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>message</servlet-name>
+		<servlet-class>MessageProc</servlet-class>
+	</servlet>
+
+	<!-- ======================================================== -->
+
+	<servlet-mapping>
+		<servlet-name>message2</servlet-name>
+		<url-pattern>/message2Proc</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>message2</servlet-name>
+		<servlet-class>www.MessageProc</servlet-class>
+	</servlet>
+
+	<!-- ======================================================== -->
+
+	<servlet-mapping>
+		<servlet-name>login</servlet-name>
+		<url-pattern>/LoginProc</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>login</servlet-name>
+		<servlet-class>LoginProc</servlet-class>
+	</servlet>
+
+	<!-- ======================================================== -->
+
+	<servlet-mapping>
+		<servlet-name>sumProc</servlet-name>
+		<url-pattern>/sumProc</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>sumProc</servlet-name>
+		<servlet-class>jsp220620.SumProc</servlet-class>
+	</servlet>
+
+	<!-- ======================================================== -->
+
+	<servlet-mapping>
+		<servlet-name>member</servlet-name>
+		<url-pattern>/memberProc</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>member</servlet-name>
+		<servlet-class>jsp220620.MemberProc</servlet-class>
+	</servlet>
+
+	<!-- ======================================================== -->
+
+	<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>jsp220620.Hello</servlet-class>
+	</servlet>
+
+	<!-- ======================================================== -->
+
+	<servlet-mapping>
+		<servlet-name>hello2</servlet-name>
+		<url-pattern>/hello2</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>hello2</servlet-name>
+		<servlet-class>jsp220621.Hello2</servlet-class>
+	</servlet>
+
+	<!-- ======================================================== -->
+
+	<servlet-mapping>
+		<servlet-name>encode</servlet-name>
+		<url-pattern>/encode</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>encode</servlet-name>
+		<servlet-class>jsp220621.Encode</servlet-class>
+	</servlet>
+
+	<!-- ======================================================== -->
+	
+</web-app>

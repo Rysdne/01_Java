@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+function check(){
+	//alert('test');
+	
+	var pw=document.querySelector('#password').value;
+	var repw=document.querySelector('#repassword').value;
+	//alert(pw+" "+repw);
+	
+	if(pw!=repw){
+		alert('패스워드가 일치하지 않습니다.');
+		document.querySelector('#password').value="";
+		document.querySelector('#repassword').value="";
+		document.querySelector('#password').focus();
+		return;
+	}
+	
+	forms.submit();
+	
+}
+</script>
+</head>
+<body>
+<a href="/index.html">홈</a>
+<form name="forms" action="creatememberProc.jsp" method="post">
+아이디:<input type="text" name="id"><br>
+비밀번호:<input type="password" name="password" id="password"><br>
+비밀번호재입력:<input type="password" name="repassword" id="repassword"><br>
+<input type="button" onclick='check()' value="회원가입">
+</form>
+</body>
+</html>

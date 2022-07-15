@@ -1,0 +1,12 @@
+<%@ page import="java.util.LinkedList" %>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+pageContext.setAttribute("jumsu",new int[]{100,90,80,70});
+
+// LinkedList<>()와 ArrayList()는 비슷한 기능
+List<String> list = new LinkedList<>();
+
+
+%>

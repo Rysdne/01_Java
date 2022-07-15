@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(function() {
+		$('#inputBtn')
+				.click(
+						function() {
+							alert('inputBtn');
+							$('body')
+									.prepend(
+											'<input type="button" id="addInputBtn" value="추가된 inputBtn">')
+						});
+
+		$('#innerBtn').click(function() {
+			alert('innerBtn');
+		});
+		$('#outerBtn').click(function() {
+			alert('outerBtn');
+			$('body').append('<button id="addBtn">추가된 버튼</button>')
+		});
+		
+//		// 이벤트 로드 방법
+//		// 위는 이미 인지되어있는 상태에서 작동
+// 		// 동적으로 추가된 버튼은 아래 이벤트로 사용할 수 없음
+// 		// ???
+// 		$('#addInputBtn').click(function() {
+// 			alert('addInputBtn');
+// 		});
+// 		$('#addBtn').click(function() {
+// 			alert('addBtn');
+// 		});
+		
+		// 해결방법
+		// 아래는 바로 사용(?)
+		$(document.on('click', '#addInputBtn', function() {
+			alert('addInputBtn')
+		}));
+		$(document.on('click', '#addBtn', function() {
+			alert('addBtn')
+		}));
+
+	});
+</script>
+</head>
+<body>
+	<form action="liter.html">
+		<input id="inputBtn" type="button" value="inputBtn"><br>
+
+		<button id="innerBtn">innerBtn</button>
+	</form>
+	<button id="outerBtn">outerBtn</button>
+	<br>
+
+</body>
+</html>

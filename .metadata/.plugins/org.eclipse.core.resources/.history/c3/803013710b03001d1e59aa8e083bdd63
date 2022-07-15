@@ -1,0 +1,7 @@
+package member.vo;
+
+import member.service.MemberServiceInter;
+
+public class MemberService implements MemberServiceInter{
+
+}

@@ -1,0 +1,16 @@
+package member.vo;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import member.service.MemberServiceInter;
+
+public class MemberService implements MemberServiceInter {
+
+	@Override
+	public MemberVO findOne(HttpServletRequest req, HttpServletResponse resp, int idx) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
