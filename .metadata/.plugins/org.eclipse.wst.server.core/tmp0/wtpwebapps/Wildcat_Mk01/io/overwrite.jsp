@@ -36,18 +36,21 @@ $(document).ready(function () {
 <%
 String idx=request.getParameter("idx");
 String id=request.getParameter("id");
+String subFolderName=request.getParameter("subFolderName");
 String title=request.getParameter("title");
 
 // 기존 타이틀을 초기화해야 함
-String preTitle=title;
-// 미리 받아놓기
+// 필요 없음
+String Title=title;
+String fileName = idx;
+// 대신 기존 폴더를 확인해야 함
 
-System.out.println(idx);
 
-String folderPath = application.getRealPath("/WEB-INF/" + id);
-// 저장 경로 : C:\Users\Rysdne\Desktop\Rysdne\Document\01. Java\work\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Wildcat_Mk01\WEB-INF
-String fileName = idx + "_" + title;
-String filePath = folderPath + "/" + fileName;
+//저장 경로 : C:\Users\Rysdne\Desktop\Rysdne\Document\01. Java\work\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Wildcat_Mk01\WEB-INF
+// String folderPath = application.getRealPath("/WEB-INF/" + id);
+// String subFolderPath=folderPath + "/" + subFolderName;
+String subFolderPath=application.getRealPath("/WEB-INF/" + id + "/" + subFolderName);
+String filePath = subFolderPath + "/" + fileName;
 
 // System.out.println(filePath);
 
@@ -66,11 +69,15 @@ br.close();
 %>
 	<form id="form" action="/Wildcat_Mk01/io/overwriteProc.jsp" method="post">
 
-		<input type="hidden" name="idx" value="<%=idx%>">
-		<input type="hidden" name="preTitle" value="<%=preTitle%>">
-		
+		<input readonly type="hidden" name="idx" value="<%=idx%>">
+
 		<span style="font-weight: bold">계정</span><br>
-		<input readonly type="text" id="name" name="id" value="<%=id%>"><br>
+		<input readonly type="text" id="name" name="id" value="<%=session.getAttribute("id")%>"><button onclick='location.href="/Wildcat_Mk01/login/logout.jsp"'>로그아웃</button><br>
+		
+		<input readonly type="hidden" id="preSubFolderName" name="preSubFolderName" value="<%=subFolderName%>"><br>
+		
+		<span style="font-weight: bold">폴더</span><br>
+		<input type="text" id="subFolderName" name="subFolderName" value="<%=subFolderName%>"><br>
 		
 		<span style="font-weight: bold">타이틀</span><br>
 		<input type="text" id="title" name="title" value="<%=title%>"><br>

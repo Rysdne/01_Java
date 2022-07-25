@@ -35,7 +35,10 @@ $(document).ready(function () {
 	<form id="form" action="/Wildcat_Mk01/io/createProc.jsp" method="post">
 		
 		<span style="font-weight: bold">계정</span><br>
-		<input type="text" id="id" name="id"><br>
+		<input readonly type="text" id="id" name="id" value="<%=session.getAttribute("id")%>"><button onclick='location.href="/Wildcat_Mk01/login/logout.jsp"'>로그아웃</button><br>
+
+		<span style="font-weight: bold">폴더</span><br>
+		<input type="text" id="subFolderName" name="subFolderName"><br>
 		
 		<span style="font-weight: bold">타이틀</span><br>
 		<input type="text" id="title" name="title"><br>

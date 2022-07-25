@@ -1,7 +1,0 @@
-package member.service;
-
-public interface MemberServiceInter {
-
-	MemberVO findOne(int idx);
-
-}
