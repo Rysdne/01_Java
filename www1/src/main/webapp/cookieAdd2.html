@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/cookieAdd2" method="post">
+		값 입력 : <input type="text" name="num"><br>
+		<input type="submit" name="op" value="+">
+		<input type="submit" name="op" value="=">
+<!-- 		<input type="submit" name="op" value="-"> -->
+<!-- 		<input type="submit" name="op" value="*"> -->
+<!-- 		<input type="submit" name="op" value="/"> -->
+	</form>
+	<div>
+		테스트 공간<br>
+	</div>
+	<script>
+// 	// 쿠키 값을 확인
+// 	document.querySelector("div").innerHTML=document.cookie;
+
+//	// 현재 쿠키 개수(?) 확인
+//	document.querySelector("div").innerHTML=document.cookie.length;
+
+	// 쿠키를 ';' 기준으로 나누어 일차적으로 분리
+	// 'servRs=1234;' 형태로 저장
+	// ca는 배열 형태로 자동으로 만들어짐
+	var ca=document.cookie.split(';');
+//	for(var i=0;i<ca.length;i++){
+// 	var c=ca[i];
+// 	document.querySelector("div").innerHTML+=c;
+//	}
+
+// 	// 분리된 값들을 '='을 기준으로 2차 분리
+// 	// a[0]=servRs / a[1]=1234 형태로 저장
+// 	for(var i=0;i<ca.length;i++){
+// 	var a=ca[i].split("=");
+//  	document.querySelector("div").innerHTML=a[0];
+//  	document.querySelector("div").innerHTML+="-";
+//  	document.querySelector("div").innerHTML+=a[1];
+// 	if(a[0]=="servRs"){
+// 		document.querySelector("div").innerHTML=+a[1];
+// 	}
+// 	}
+
+	// 실시간으로 결과값을 보여줌
+	for(var i=0;i<ca.length;i++){
+		var a=ca[i].split("=");
+		if(a[0]=="servRs"){
+			document.querySelector("div").innerHTML="현재 결과값 : "+a[1];
+		}
+		}
+
+	
+// 	var ca2=document.cookie.split(' ');
+// 	document.querySelector("div").innerHTML=ca[0];
+	</script>
+</body>
+</html>

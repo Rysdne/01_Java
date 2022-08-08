@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+
+$(function(){
+	// 선언하는 코드는 html이 로드되며 자동 실행
+	for(var i=0;i<6;i++){
+		$('input[name=checkboxes]').eq(i).val(i+1);
+	}
+	
+	$('#submit').click(function(){
+			var str = "";
+			$('input[name=checkboxes]:checked').each(function() {
+				str += $(this).val();
+			});
+			alert(str);
+		
+	});
+	
+});
+</script>
+</head>
+<body>
+
+<input type="checkbox" name="checkboxes">1<br>
+<input type="checkbox" name="checkboxes">2<br>
+<input type="checkbox" name="checkboxes">3<br>
+<input type="checkbox" name="checkboxes">4<br>
+<input type="checkbox" name="checkboxes">5<br>
+
+<input type="button" id="submit" value="전송">
+
+</body>
+</html>

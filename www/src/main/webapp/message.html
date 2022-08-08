@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>html form</title>
+</head>
+<body>
+
+	<form action="/messageProc" method="get">
+		<!-- get 방식으로 전송 시 영문은 그대로 적용됨 -->
+		<!-- 한글은 다른 형식으로 보내짐 -->
+
+		메시지:<input type="text" name="message">
+		<!-- name 항목은 데이터값을 받을 id같은 느낌 -->
+		<!-- submit 시 전송되는 이름임 -->
+
+		<input type="submit" value="메시지 전송">
+	</form>
+
+</body>
+</html>

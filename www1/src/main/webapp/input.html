@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="/inputProc" method="post">
+
+		<!-- 1. Checkbox	-->
+		<!--
+		<input type="checkbox" name="hobby" value="요리">요리<br>
+		<input type="checkbox" name="hobby" value="운동">운동<br>
+		<input type="checkbox" name="hobby" value="독서">독서<br>
+		<input type="checkbox" name="hobby" value="수영">수영<br>
+ 		-->
+
+		<!-- 2. Select -->
+		<!-- multiple : 다중 선택이 가능 -> 하나의 값으로 여러 값을 전달할 수 있음 -->
+		<!--
+ 		<select name="cars" id="cars">
+			<option value="현대">현대</option>
+			<option value="기아">기아</option>
+			<option value="쌍용">쌍용</option>
+			<option value="audi">Audi</option>
+		</select><br>
+		-->
+
+		<!-- 3. Radio -->
+		<!-- 얘는 value="매우만족" 형태로 해도 값으로 변환해야 함 -->
+
+		<input type="radio" name="sel" value="3점">3점<br> <input
+			type="radio" name="sel" value="2점">2점<br> <input
+			type="radio" name="sel" value="1점">1점<br>
+
+
+
+		<!--한 것들
+		버튼 : <input type="button" name="test"><br>
+		체크박스 : <input type="checkbox" name="test"><br>
+		색깔 : <input type="color" name="test"><br>
+		날짜 : <input type="date" name="test"><br>
+		시간 : <input type="datetime-local" name="test"><br>
+		이메일 : <input type="email" name="test"><br>
+		파일 : <input type="file" name="test"><br>		
+		??? : <input type="hidden" name="test"><br>
+		??? : <input type="image" name="test"><br>
+		월 : <input type="month" name="test"><br>		
+		숫자 : <input type="number" name="test"><br>
+		비밀번호 : <input type="password" name="test"><br>
+		점수 : <input type="radio" name="test"><br>
+		범위 : <input type="range" name="test"><br>
+		초기화(???) : <input type="reset" name="test"><br>
+		검색 : <input type="search" name="test"><br>
+		전송 : <input type="submit" name="test"><br>
+		전화 : <input type="tel" name="test"><br>
+		텍스트 : <input type="text" name="test"> (default value)<br>
+		시간 : <input type="time" name="test"><br>
+		웹 주소 : <input type="url" name="test"><br>
+		주 : <input type="week" name="test"><br>
+		선택 : <select id="cars" name="test">
+			<option value="volvo">Volvo</option>
+			<option value="saab">Saab</option>
+			<option value="opel">Opel</option>
+			<option value="audi">Audi</option>
+		</select><br>
+		텍스트 공간 : <textarea id="w3review" name="w3review" rows="4" cols="50" name="test">
+		</textarea><br>
+		-->
+
+		<input type="submit" value="전송">
+	</form>
+</body>
+</html>

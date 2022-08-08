@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		// 쿠키 내용 출력
+		document.write(document.cookie + "<br>");
+		// 결과 : servRs=1234 형태
+
+		var ca = document.cookie.split(';');
+
+		// 배열에 담긴 내용을 원하는 형태로 출력
+		// 1) ; 식별자 기반
+		for (var i = 0; i < ca.length; i++) {
+			document.write(i + ":" + ca[i] + "<br>");
+		}
+		// 2) = 식별자 기반
+		for (var i = 0; i < ca.length; i++) {
+			var a = ca[i].split('=');
+			document.write(a[0] + "<br>");
+			document.write(a[1] + "<br>");
+		}
+
+		// trim() 사용해 공백 제거 후 key값 추출
+		// trim() : 공백 제거(?)
+		document.write("---------- servRs 추출 값 ----------<br>");
+		for (var i = 0; i < ca.length; i++) {
+			var f = ca[i].split('=');
+			if (f[0].trim() == "servRs") {
+				document.write(f[1] + "<br>");
+
+			}
+
+		}
+	</script>
+</body>
+</html>

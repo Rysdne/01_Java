@@ -1,0 +1,15 @@
+package login.service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import login.vo.MemberVO;
+
+public interface MemberServiceInter {
+
+	public boolean login(HttpServletRequest req, HttpServletResponse resp);
+
+	public void logout(HttpServletRequest req, HttpServletResponse resp);
+
+	public void addlogin(HttpServletRequest req, HttpServletResponse resp);
+}
