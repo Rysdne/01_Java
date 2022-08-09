@@ -25,6 +25,7 @@
 		document.getElementById('result').innerHTML =  '중간값:='+interim_transcript+'<br/>결과값='+final_transcript;
 		console.log('interim='+interim_transcript+'|final='+final_transcript);
 	};
+	// http://localhost:8080/Wildcat_annyang.js/recorder2.jsp
 </script>
 </head>
 <body class="" id="grid">

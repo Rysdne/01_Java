@@ -16,7 +16,7 @@ public class MemberDAO {
 		Connection conn = null;
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.10:1521:xe", "test", "1111");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.0.51:1521:xe", "test", "1111");
 			if(conn!=null) System.out.println("db성공 ");
 			else System.out.println("db실패 ");
 		} catch (Exception ex) {

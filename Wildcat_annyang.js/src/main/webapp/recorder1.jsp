@@ -41,23 +41,25 @@ button {
 </head>
 <body>
 
-	<h1>Speech to Text Example!!!</h1>
+	<h1>Speech to Text</h1>
 
-	<button id="speech" onclick="speech_to_text()">Start STT</button>
+	<button id="speech" onclick="speech_to_text()">Start</button>
 	<button id="stop" onclick="stop()">Stop</button>
 	<p id="message">버튼을 누르고 아무말이나 하세요.</p>
 
 	<div class="textWrapper">
-		<div id="korea" class="textbox"></div>
-		<div id="english" class="textbox"></div>
+		<div id="slicedText" class="textbox"></div>
+		<div id="stackText" class="textbox"></div>
 	</div>
 
 	<script type="text/javascript">
 		var message = document.querySelector("#message");
 		var button = document.querySelector("#speech");
-		var korea = document.querySelector("#korea");
-		var english = document.querySelector("#english");
+		var slicedText = document.querySelector("#slicedText");
+		var stackText = document.querySelector("#stackText");
 		var isRecognizing = false;
+		var lastText = "";
+		var stopThatShit="";
 
 		if ('SpeechRecognition' in window) {
 			// Speech recognition support. Talk to your apps!
@@ -75,7 +77,7 @@ button {
 		recognition.lang = 'ko-KR'; //선택하게 해줘야 할듯 .
 		recognition.interimResults = false;
 		recognition.maxAlternatives = 5;
-		recognition.continuous = true;
+		//recognition.continuous = true;
 
 		function speech_to_text() {
 
@@ -83,71 +85,55 @@ button {
 			isRecognizing = true;
 
 			recognition.onstart = function() {
-				console.log("음성인식이 시작 되었습니다. 이제 마이크에 무슨 말이든 하세요.")
-				message.innerHTML = "음성인식 시작...";
-				button.innerHTML = "Listening...";
+				console.log("Listening..")
+				message.innerHTML = "START";
+				button.innerHTML = "onStart";
 				button.disabled = true;
 			}
 
-			recognition.onspeechend = function() {
-				message.innerHTML = "버튼을 누르고 아무말이나 하세요.";
-				button.disabled = false;
-				button.innerHTML = "Start STT";
-			}
+// 			recognition.onspeechend = function() {
+// 				message.innerHTML = "LISTENING";
+// 				button.disabled = false;
+// 				button.innerHTML = "onSpeechend";
+// 			}
 
 			recognition.onresult = function(event) {
 				console.log('You said: ', event.results[0][0].transcript);
 				// 결과를 출력
-				var resText = event.results[0][0].transcript;
-				korea.innerHTML = resText;
 
+				var resText = event.results[0][0].transcript;
+
+				lastText = lastText + resText + "<br>";
+				slicedText.innerHTML = resText;
+				stackText.innerHTML = lastText;
 			};
 
 			recognition.onend = function() {
-				message.innerHTML = "버튼을 누르고 아무말이나 하세요.";
+				if(message.innerHTML=="STOP"){
+					return;
+				}else{
+				message.innerHTML = "END";
 				button.disabled = false;
-				button.innerHTML = "Start STT";
-				isRecognizing = false;
-
+				button.innerHTML = "onEnd";
+				 
+				//isRecognizing = false;
+				//*음성 입력이 꺼졌다 켜지는 것을 방지함
+				
+				recognition.start();
+				}
 			}
 		}
 
 		function stop() {
 			recognition.stop();
-			message.innerHTML = "버튼을 누르고 아무말이나 하세요.";
+			message.innerHTML = "STOP";
 			button.disabled = false;
-			button.innerHTML = "Start STT";
+			button.innerHTML = "stop";
 			isRecognizing = false;
+			
 		}
 
-		// Text to speech
-		function text_to_speech(txt) {
-			// Web Speech API - speech synthesis
-			if ('speechSynthesis' in window) {
-				// Synthesis support. Make your web apps talk!
-				console.log("음성합성을 지원하는  브라우저입니다.");
-			}
-			var msg = new SpeechSynthesisUtterance();
-			var voices = window.speechSynthesis.getVoices();
-			//msg.voice = voices[10]; // 두번째 부터 완전 외국인 발음이 됨. 사용하지 말것.
-			msg.voiceURI = 'native';
-			msg.volume = 1; // 0 to 1
-			msg.rate = 1.3; // 0.1 to 10
-			//msg.pitch = 2; //0 to 2
-			msg.text = txt;
-			msg.lang = 'ko-KR';
-
-			msg.onend = function(e) {
-				if (isRecognizing == false) {
-					recognition.start();
-				}
-				console.log('Finished in ' + event.elapsedTime + ' seconds.');
-			};
-			window.speechSynthesis.speak(msg);
-		}
+		// http://localhost:8080/Wildcat_annyang.js/recorder1.jsp
 	</script>
-
-	</script>
-
 </body>
 </html>
