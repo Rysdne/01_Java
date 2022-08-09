@@ -1,0 +1,69 @@
+package di.exam;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class Student {
+
+	@Autowired
+	@Qualifier("inlinePrint")
+	Print print;
+	String name;
+	int kor;
+	int eng;
+	int math;
+
+	public Student() {
+	}
+
+	public Student(Print print, String name, int kor, int eng, int math) {
+		this.print = print;
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
+
+	public Print getPrint() {
+		return print;
+	}
+
+	public void setPrint(Print print) {
+		this.print = print;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getKor() {
+		return kor;
+	}
+
+	public void setKor(int kor) {
+		this.kor = kor;
+	}
+
+	public int getEng() {
+		return eng;
+	}
+
+	public void setEng(int eng) {
+		this.eng = eng;
+	}
+
+	public int getMath() {
+		return math;
+	}
+
+	public void setMath(int math) {
+		this.math = math;
+	}
+
+}

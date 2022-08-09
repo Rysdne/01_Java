@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+
+	<bean id="student1" class="di.test.Student">
+		<constructor-arg value="10" />
+		<constructor-arg value="10" />
+		<constructor-arg value="10" />
+	</bean>
+
+	<bean id="student2" class="di.test.Student">
+		<constructor-arg value="20" index="2" />
+		<constructor-arg value="10" index="1" />
+		<constructor-arg value="00" index="0" />
+	</bean>
+
+	<bean id="student3" class="di.test.Student">
+		<constructor-arg value="22" index="2" type="int" />
+		<constructor-arg value="11" index="1" type="int" />
+		<constructor-arg value="00" index="0" type="int" />
+	</bean>
+
+	<bean id="student4" class="di.test.Student">
+		<property name="kor" value="100"></property>
+		<property name="eng">
+			<value>20</value>
+		</property>
+	</bean>
+	
+	<!-- 한 줄로 사용해보자 -->
+	<!-- namespace를 미리 선언 (위 xmlns:p에서 확인) -->
+	
+	<bean id="student5" class="di.test.Student" p:kor="80" p:eng="60"
+		p:math="40" />
+
+	<!-- Bean 설정을 하다 보면 기존 라이브러리 객체를 사용해야 하는 경우가 발생 -->
+	<!-- 특히 배열리스트는 자주 사용하는 라이브러리 객체로, ArrayList 객체 사용법을 알아야 함 -->
+	<!-- 기존 방법 : List<String> list=new ArrayList<String>(); -->
+	<!-- 실제 형태 : List<String> list=new java.util.ArrayList<String>(); -->
+	<!-- 삽입 01 : list.add("~~~"); -->
+	<!-- 삽입 02 : Arrays.asList("~~~","~~~"); -->
+
+	<!-- 생성자를 사용해서 형성하기 때문에 constructor-arg 사용 -->
+
+	<bean id="list" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<bean class="java.lang.String">
+					<constructor-arg>
+						<value>banana</value>
+					</constructor-arg>
+				</bean>
+				<bean class="java.lang.String">
+					<constructor-arg>
+						<value>orange</value>
+					</constructor-arg>
+				</bean>
+
+				<bean class="java.lang.String">
+					<constructor-arg>
+						<value>apple</value>
+					</constructor-arg>
+				</bean>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<!-- 리스트를 네임스페이스를 사용하여 간단히 bean 생성 util:list -->
+	
+	<util:list id="ulist">
+		<bean class="java.lang.String">
+			<constructor-arg>
+				<value>banana</value>
+			</constructor-arg>
+		</bean>
+		<bean class="java.lang.String">
+			<constructor-arg>
+				<value>orange</value>
+			</constructor-arg>
+		</bean>
+		<bean class="java.lang.String">
+			<constructor-arg>
+				<value>apple</value>
+			</constructor-arg>
+		</bean>
+	</util:list>
+
+</beans>
+
+
+
+
