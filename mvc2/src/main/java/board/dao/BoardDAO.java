@@ -59,18 +59,6 @@ public class BoardDAO implements BoardDaoInter {
 
 	}
 
-	// @Test
-	public void insertTest() {
-		BoardVO board = new BoardVO();
-		board.setTitle("게시판 테스트");
-		board.setContent("게시판 테스트 내용");
-		board.setWriteId("admin");
-		board.setWriteName("김관리");
-		board.setFilename("");
-		insert(board);
-
-	}
-
 	public int replyInsert(BoardVO board) {
 		try {
 			String sql = "insert into board(idx,title,content, readcount," + "groupid, depth, groupseq,"
@@ -107,7 +95,7 @@ public class BoardDAO implements BoardDaoInter {
 		board.setDepth(1);
 		board.setWriteId("admin");
 		board.setWriteName("김관리");
-		board.setFilename("");
+		board.setFilename("filename");
 		replyInsert(board);
 
 	}

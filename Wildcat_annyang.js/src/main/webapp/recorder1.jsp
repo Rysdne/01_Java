@@ -45,7 +45,7 @@ button {
 
 	<button id="speech" onclick="speech_to_text()">Start</button>
 	<button id="stop" onclick="stop()">Stop</button>
-	<p id="message">버튼을 누르고 아무말이나 하세요.</p>
+	<p id="message">대기중</p>
 
 	<div class="textWrapper">
 		<div id="slicedText" class="textbox"></div>
@@ -98,11 +98,8 @@ button {
 // 			}
 
 			recognition.onresult = function(event) {
-				console.log('You said: ', event.results[0][0].transcript);
-				// 결과를 출력
 
 				var resText = event.results[0][0].transcript;
-
 				lastText = lastText + resText + "<br>";
 				slicedText.innerHTML = resText;
 				stackText.innerHTML = lastText;

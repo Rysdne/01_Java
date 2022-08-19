@@ -25,7 +25,7 @@ public class IndexDAO implements IndexDaoInter {
 			pstmt = conn.prepareStatement(sql);
 			ResultSet exId = pstmt.executeQuery();
 			if (!exId.next()) {
-				sql = "create table wTestID(uidx number(5) primary key, id varchar2(50) unique not null, password varchar2(20) not null)";
+				sql = "create table wTestID(uidx number(5) primary key, id varchar2(20) unique not null, password varchar2(20) not null, email varchar2(40) not null)";
 				pstmt = conn.prepareStatement(sql);
 				ResultSet rs = pstmt.executeQuery();
 

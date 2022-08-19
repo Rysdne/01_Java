@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.MemberMapper">
+<insert id="insert">
+insert into member(id, password) values(#{id},#{password})
+</insert>
+
+<select id="select" resultType="java.lang.String">
+select password from member where id=#{id}
+</select>
+
+<!-- 
+<select id="getList" resultType="java.util.List">
+select * from member
+</select> 
+-->
+
+<!-- 결과값이 리스트타입임에도 불구하고 Member타입으로 결과 를 설정하면 자동으로 리스트를 만들어 반환 -->
+
+<select id="getList" resultType="mybatis.Member">
+select * from member
+</select> 
+
+<update id="update" parameterType="mybatis.Member">
+update member set password=#{password} where id=#{id}
+</update>
+
+<delete id="delete">
+delete from member where id=#{id}
+</delete>
+
+</mapper>

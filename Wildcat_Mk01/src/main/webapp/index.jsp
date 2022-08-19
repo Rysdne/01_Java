@@ -37,6 +37,7 @@
 		<li><a href="/Wildcat_Mk01/io/create.jsp">새로 작성</a></li>
 		<li><a href="/Wildcat_Mk01/list/listAll.jsp">목록 확인</a></li>
 		<li><a href="/Wildcat_Mk01/list/delete.jsp">파일 삭제</a></li>
+		<li><a href="/Wildcat_Mk01/login/profReset.jsp">회원정보 변경</a></li>
 	</ul>
 	<%
 	} else {
