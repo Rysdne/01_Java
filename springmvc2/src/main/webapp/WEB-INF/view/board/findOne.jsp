@@ -29,10 +29,10 @@
 수정모드(readonly 제거 후 수정하기 submit버튼을 만들어져야함) 
 만약 제목이 있을 경우 제목을 변경하고 form action을 미리 정의해야함
 -->
-<%--<c:if test="${id eq board.writeId}"--%>
+<c:if test="${id eq board.writeId}">
 <input type="button" class="btn btn-primary" value="수정">
 <input type="button" class="btn btn-primary" value="삭제">
-<%--</c:if>--%>
+</c:if>
 
 <!-- 댓글달기는 로그인만 되면 가능(무조건 표시) -->
 <input type="button" class="btn btn-primary" value="댓글쓰기">

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+
+	<bean id="advice" class="aop2.Advice" />
+	<bean id="targetA" class="aop2.TargetA" />
+	<bean id="targetB" class="aop2.TargetB" />
+
+	<aop:config>
+		<aop:aspect ref="advice">
+
+			<aop:pointcut id="pointcut" expression="execution(public void aop2.*.*())" />
+
+			<!-- 앞과 뒤에 기능이 실행되는 부분
+			<aop:before method="before" pointcut-ref="pointcut" />
+			<aop:after method="after" pointcut-ref="pointcut" />
+			-->
+			
+			<aop:around method="around" pointcut-ref="pointcut"/>
+
+
+		</aop:aspect>
+	</aop:config>
+
+</beans>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<!-- ViewResolver -->
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/view/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+
+	<!-- 어노테이션 사용한 클래스 파일의 bean 생성 역할을 함 -->
+	<!-- Namespaces에서 context 체크 -->
+
+	<context:component-scan
+		base-package="controller, service, dao, vo, scheduled" />
+
+	<!-- 설정 파일에서 bean을 생성하고 @Autowired를 사용할 경우에 적용 -->
+
+	<context:annotation-config></context:annotation-config>
+
+	<!-- css, js, png 등 리소스 파일 접근 설정 -->
+	<!-- Namespaces에서 context 체크 -->
+
+	<mvc:annotation-driven />
+	<mvc:resources location="/WEB-INF/" mapping="/**" />
+
+	<task:annotation-driven />
+
+
+</beans>

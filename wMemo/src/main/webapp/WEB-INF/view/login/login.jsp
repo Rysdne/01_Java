@@ -1,8 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ page import="java.sql.*"%>
-<link href="/wMemo/css/content/style.css" type="text/css" rel="stylesheet"/>
-
+<link href="/wMemo/css/content/style.css" type="text/css"
+	rel="stylesheet" />
 <script>
 	$(function() {
 		$('#login').click(function() {
@@ -13,7 +12,6 @@
 				return;
 			}
 			$('#loginForm').submit();
-			
 		});
 	});
 </script>
@@ -56,6 +54,7 @@
 		<div id="main_memo">
 			<div id="main_memoHeader">
 				<ul>
+					<li>공지</li>
 					<li>새 메모</li>
 					<li>수정</li>
 					<li>삭제</li>
@@ -67,15 +66,17 @@
 						name="title_disabled" placeholder="로그인">
 					<div id="postit_box">
 						<div id="postit_login">
-							<form id="loginForm" action="/test/login/loginProc" method="post">
-								<span style="font-weight: bold">ID : </span><br>
-								<input type="text" id="id" name="id" placeholder="ID"><br>
-								<span style="font-weight: bold">PW : </span><br>
-								<input type="password" id="password" name="password" placeholder="Password"><br>
-								<input type="button" id="login" name="login" value="로그인">
+							<form id="loginForm" action="/wMemo/login/loginProc"
+								method="post">
+								<span style="font-weight: bold">ID : </span><br> <input
+									type="text" id="id" name="id" placeholder="ID"><br>
+								<span style="font-weight: bold">PW : </span><br> <input
+									type="password" id="password" name="password"
+									placeholder="Password"><br> <input type="button"
+									id="login" name="login" value="로그인">
 							</form>
-							<a href="#">회원가입</a> | <a href="#">아이디 찾기</a> | <a href="#">비밀번호
-								찾기</a>
+							<a href="/wMemo/login/regId">회원가입</a> | <a href="/wMemo/login/findId">아이디 찾기</a> | <a href="/wMemo/login/findPw">비밀번호 찾기</a><br>
+							<button onclick="location.href='/wMemo/'">메인 화면</button>
 						</div>
 					</div>
 				</div>

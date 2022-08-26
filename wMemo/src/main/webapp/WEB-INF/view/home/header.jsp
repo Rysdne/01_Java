@@ -11,7 +11,7 @@
 		${sessionScope.id}
 		</h1>
 		<h5 id="header_profile_logout">
-			<a href="#">로그아웃</a>
+			<a href="/wMemo/login/logout">로그아웃</a>
 		</h5>
 	</div>
 	<div id="header_menu">

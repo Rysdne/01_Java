@@ -24,7 +24,7 @@ aside {
 }
 
 .aside_open {
-	width: 40vh;
+	width: 45vh;
 }
 
 #aside_sideMenu {
@@ -59,16 +59,31 @@ aside {
 	margin-left: 5vh;
 }
 
-#aside_folder_option {
+#aside_option {
 	height: 5vh;
 	background-color: gray;
 }
 
-#aside_folder {
+#aside_box {
 	background-color: lightgray;
 	flex-grow: 1;
 }
 
+/* --- listPart ------------------------------------------ */
+#tBody:hover {
+	background-color: lightgray;
+}
+
+/*
+.idxHidden>*:first-child {
+	display: none;
+}
+*/
+.idxIdHidden {
+	display: none;
+}
+
+/* -------------------------------------------------------- */
 #main_loginCover_back {
 	width: 10%;
 	height: 83vh;
@@ -100,6 +115,8 @@ main {
 	height: 4vh;
 	float: left;
 	background-color: sandybrown;
+	text-align: center;
+	line-height: 4vh;
 }
 
 #main_memoHeader ul li:first-child {
@@ -122,8 +139,6 @@ main {
 	clear: both;
 }
 
-
-
 #title {
 	width: 40%;
 	min-width: 300px;
@@ -139,7 +154,6 @@ main {
 	outline: 0;
 }
 
-
 #input {
 	background-color: whitesmoke;
 	width: 100%;
@@ -153,7 +167,6 @@ main {
 }
 
 /* --- loginPart ------------------------------------------ */
-
 .aside_sideMenu_butt_disabled {
 	width: 4vh;
 	height: 4vh;
@@ -168,7 +181,6 @@ main {
 	clear: both;
 }
 
-
 #title_disabled {
 	width: 40%;
 	min-width: 300px;
@@ -180,21 +192,19 @@ main {
 	font-size: 2.5rem;
 }
 
-
-
 #postit_box {
 	width: 60vh;
 	height: 60vh;
 	margin: 0 auto;
-	background-image: url("/test/img/postit.png");
+	background-image: url("/wMemo/img/postit.png");
 	background-repeat: no-repeat;
 	background-size: cover;
-	display:flex;
+	display: flex;
 }
 
 #postit_login {
-	margin:10vh 0;
-	margin-left:8vh;
+	margin: 10vh 0;
+	margin-left: 8vh;
 	width: 40vh;
 }
 

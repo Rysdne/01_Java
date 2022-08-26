@@ -7,8 +7,11 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
+		<config>src/main/java/aop/config.xml</config>
+		<config>src/main/java/aop2/config.xml</config>
 	</configs>
 	<autoconfigs>
+		<config>src/main/webapp/WEB-INF/config/board-context.xml</config>
 		<config>src/main/webapp/WEB-INF/config/member-context.xml</config>
 		<config>src/main/webapp/WEB-INF/config/root-context.xml</config>
 		<config>src/main/webapp/WEB-INF/config/home-context.xml</config>
