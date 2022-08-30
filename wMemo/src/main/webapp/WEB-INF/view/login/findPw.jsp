@@ -78,13 +78,30 @@
 					<div id="postit_box">
 						<div id="postit_login">
 							<form id="findPwForm" action="/wMemo/login/findPwProc" method="post">
-								<span style="font-weight: bold">ID : </span><br>
-								<input type="text" id="id" name="id" placeholder="ID"><br>
-								<span style="font-weight: bold">E-mail : </span><br>
-								<input type="text" id="email" name="email" placeholder="E-mail"><br>
-								<input type="button" id="findPw" name="findPw" value="조회">
+								<table>
+									<tr>								
+										<th>
+											<span style="font-weight: bold">ID : </span>
+										</th>
+										<td>
+											<input type="text" id="id" name="id" placeholder="ID">
+										</td>
+										<td rowspan="2">
+											<input type="button" id="findPw" name="findPw" value="조회">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<span style="font-weight: bold">Email : </span>
+										</th>
+										<td>
+											<input type="text" id="email" name="email" placeholder="Email Address">
+										</td>
+									</tr>
+								</table>
 							</form>
-							<a href="/wMemo/login/login">로그인</a> | <a href="/wMemo/login/findId">아이디 찾기</a><br>
+							<a href="/wMemo/login/login">로그인</a> | <a href="/wMemo/login/findId">아이디 찾기</a>
+							<br><br>
 							<button onclick="location.href='/wMemo/'">메인 화면</button>
 						</div>
 					</div>

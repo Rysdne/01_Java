@@ -8,9 +8,9 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<mvc:annotation-driven/>
-	<mvc:resources location="/WEB-INF/static/" mapping="/**"/>
+	<mvc:resources location="/WEB-INF/resources/" mapping="/**"/>
 	
-	<context:component-scan base-package="home.controller"/>
+	<context:component-scan base-package="home.controller, home.service, home.dao"/>
 	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<beans:property name="prefix" value="/WEB-INF/view/home/"/>
 		<beans:property name="suffix" value=".jsp"/>

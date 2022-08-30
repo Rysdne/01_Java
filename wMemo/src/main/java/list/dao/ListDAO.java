@@ -29,13 +29,13 @@ public class ListDAO implements ListDaoInter {
 	@Override
 	public List<ListVO> listAll(String _id) {
 		try {
-			String sql = "select * from wMemo where id=? order by idx desc";
+			String sql = "select * from wMemo where id=? order by subfolder asc, idx asc";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, _id);
 			ResultSet rs = pstmt.executeQuery();
 			List<ListVO> list = new ArrayList();
 			while(rs.next()) {
-				Long idx = rs.getLong("idx");
+				String idx = rs.getString("idx");
 				String id = rs.getString("id");
 				String subfolder = rs.getString("subfolder");
 				String title = rs.getString("title");
@@ -53,14 +53,14 @@ public class ListDAO implements ListDaoInter {
 	@Override
 	public List<ListVO> listMonth(String _id, String idxMonth) {
 		try {
-			String sql = "select * from wMemo where id=? and idx like ? order by idx desc";
+			String sql = "select * from wMemo where id=? and idx like ? order by subfolder, idx asc";
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, _id);
 			pstmt.setString(2, idxMonth + "%");
 			ResultSet rs = pstmt.executeQuery();
 			List<ListVO> list = new ArrayList();
 			while(rs.next()) {
-				long idx = rs.getLong("idx");
+				String idx = rs.getString("idx");
 				String id = rs.getString("id");
 				String subfolder = rs.getString("subfolder");
 				String title = rs.getString("title");

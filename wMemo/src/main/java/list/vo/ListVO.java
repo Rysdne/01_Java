@@ -2,7 +2,7 @@ package list.vo;
 
 public class ListVO {
 
-	private long idx;
+	private String idx;
 	private String id;
 	private String subfolder;
 	private String title;
@@ -12,7 +12,7 @@ public class ListVO {
 	public ListVO() {
 	}
 
-	public ListVO(Long idx, String id, String subfolder, String title, String cdate, String ctime) {
+	public ListVO(String idx, String id, String subfolder, String title, String cdate, String ctime) {
 		this.idx = idx;
 		this.id = id;
 		this.subfolder = subfolder;
@@ -21,11 +21,11 @@ public class ListVO {
 		this.ctime = ctime;
 	}
 
-	public long getIdx() {
+	public String getIdx() {
 		return idx;
 	}
 
-	public void setIdx(long idx) {
+	public void setIdx(String idx) {
 		this.idx = idx;
 	}
 

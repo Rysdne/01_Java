@@ -66,14 +66,6 @@ public class LoginController {
 	}
 	// ...............................................................
 
-//	@RequestMapping("/findId")
-//	public ModelAndView findId() {
-//		ModelAndView mv = new ModelAndView();
-//		mv.setViewName("findId");
-//		return mv;
-//	}
-//	// ...............................................................
-
 	@RequestMapping("/findIdProc")
 	public ModelAndView findIdProc(String email) {
 		ModelAndView mv = new ModelAndView();
@@ -116,14 +108,14 @@ public class LoginController {
 	@RequestMapping("/pwResetProc")
 	public String pwResetProc(String id, String password) {
 		int result = service.pwReset(id, password);
-		return "redirect:/login/pwResetResult";
+		return "redirect:/login/pwResetSuccess";
 	}
 	// ...............................................................
 
-	@RequestMapping("/pwResetResult")
+	@RequestMapping("/pwResetSuccess")
 	public ModelAndView pwResetResult() {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("content", "login/pwResetResult.jsp");
+		mv.addObject("content", "login/pwResetSuccess.jsp");
 		mv.setViewName("index");
 		return mv;
 	}
@@ -144,15 +136,13 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView();
 		if (service.regId(id, password, email) != 0) {
 			int result = service.regId(id, password, email);
-			mv.addObject("content", "login/regIdResult.jsp");
+			mv.addObject("content", "login/regIdSuccess.jsp");
 		} else {
 			mv.addObject("content", "login/regIdFailed.jsp");
 		}
 		mv.setViewName("index");
 		return mv;
-
 	}
 
 	// ===============================================================
-
 }

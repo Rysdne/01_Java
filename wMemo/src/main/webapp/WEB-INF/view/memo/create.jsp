@@ -14,6 +14,13 @@
 		var splitYear = now.getFullYear();
 		var splitMonth = ("0" + (now.getMonth() + 1)).slice(-2);
 		var currentMonth = splitYear + "-" + splitMonth;
+		$('tr').click(function() {
+			var idx = $(this).find("td").eq(0).text();
+			var id = $(this).find("td").eq(1).text();
+			var subfolder = $(this).find("td").eq(2).text();
+			var title = $(this).find("td").eq(3).text();
+			location.href = "/wMemo/memo/update?idx=" + idx + "&id=" + id + "&subfolder=" + subfolder + "&title=" + title;
+		});
 		$('.aside_sideMenu_butt').click(function() {
 			var currId = $(this).attr('id');
 			if(currId=="bookmark"){
@@ -103,15 +110,15 @@
 				<ul>
 					<li onclick="location.href='/wMemo/'">공지</li>
 					<li onclick="location.href='/wMemo/memo/create'">새 메모</li>
-					<li>수정</li>
+					<li id="save">저장</li>
 					<li>삭제</li>
 				</ul>
 			</div>
 			<div id="main_memoBody">
 			<form id="form" action="/wMemo/memo/createProc" method="post">
-				<input type="hidden" id="id" name="id" value="${sessionScope.id}"> 
+				<input type="hidden" id="id" name="id" value="${sessionScope.id}">
 				<input type="text" id="title" name="title" placeholder="Title">
-				<input type="button" id="save" name="save" value="저장"><br>
+				<input type="text" id="subfolder" name="subfolder" placeholder="Folder">
 				<div contentEditable="true" id="input"></div>
 				<input type="hidden" id="memo" name="memo">
 			</form>

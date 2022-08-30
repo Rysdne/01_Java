@@ -5,15 +5,15 @@
 <link href="/wMemo/css/content/style.css" type="text/css"
 	rel="stylesheet" />
 <script>
-// 	$(function() {
-// 		$('tr').click(function() {
-// 			var idx = $(this).find("td").eq(0).text();
-// 			var id = $(this).find("td").eq(1).text();
-// 			var subFolderName = $(this).find("td").eq(2).text();
-// 			var title = $(this).find("td").eq(3).text();
-// 			location.href = "/Wildcat_Mk01/io/overwrite.jsp?idx=" + idx + "&id=" + id + "&subFolderName=" + subFolderName + "&title=" + title;
-// 		});
-// 	});
+	$(function() {
+		$('tr').click(function() {
+			var idx = $(this).find("td").eq(0).text();
+			var id = $(this).find("td").eq(1).text();
+			var subfolder = $(this).find("td").eq(2).text();
+			var title = $(this).find("td").eq(3).text();
+			location.href = "/wMemo/memo/findOne?idx=" + idx + "&id=" + id + "&subfolder=" + subfolder + "&title=" + title;
+		});
+	});
 </script>
 <table style="background-color:white;">
 	<tr class="idxHidden" style="border:1px solid lightgray; background-color:rebeccapurple; color:white;">

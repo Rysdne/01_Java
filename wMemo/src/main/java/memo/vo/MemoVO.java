@@ -2,17 +2,28 @@ package memo.vo;
 
 public class MemoVO {
 
-	long idx;
-	String id;
-	String subfolder;
-	String title;
-	String cdate;
-	String ctime;
+	private String idx;
+	private String id;
+	private String subfolder;
+	private String title;
+	private String cdate;
+	private String ctime;
+	private String loaded;
 
 	public MemoVO() {
 	}
+	
+	public MemoVO(String idx, String id, String subfolder, String title, String loaded) {
+		this.idx = idx;
+		this.id = id;
+		this.subfolder = subfolder;
+		this.title = title;
+		this.loaded = loaded;
+	}
 
-	public MemoVO(long idx, String id, String subfolder, String title, String cdate, String ctime) {
+
+
+	public MemoVO(String idx, String id, String subfolder, String title, String cdate, String ctime) {
 		this.idx = idx;
 		this.id = id;
 		this.subfolder = subfolder;
@@ -21,11 +32,11 @@ public class MemoVO {
 		this.ctime = ctime;
 	}
 
-	public long getIdx() {
+	public String getIdx() {
 		return idx;
 	}
 
-	public void setIdx(long idx) {
+	public void setIdx(String idx) {
 		this.idx = idx;
 	}
 
@@ -67,6 +78,14 @@ public class MemoVO {
 
 	public void setCtime(String ctime) {
 		this.ctime = ctime;
+	}
+
+	public String getLoaded() {
+		return loaded;
+	}
+
+	public void setLoaded(String loaded) {
+		this.loaded = loaded;
 	}
 	
 }

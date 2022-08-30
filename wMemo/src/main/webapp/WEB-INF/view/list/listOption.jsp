@@ -17,6 +17,7 @@
 		$('#listMonth').click(function() {
 			// var i = 0;
 			var _month = $('#month').val();
+			alert(_month);
 			var mArray = _month.split("-");
 			// var selectMonth = mArray[0] + "-" + mArray[1];
 			var idxMonth = mArray[0] + mArray[1];

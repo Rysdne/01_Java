@@ -66,17 +66,30 @@
 						name="title_disabled" placeholder="로그인">
 					<div id="postit_box">
 						<div id="postit_login">
-							<form id="loginForm" action="/wMemo/login/loginProc"
-								method="post">
-								<span style="font-weight: bold">ID : </span><br> <input
-									type="text" id="id" name="id" placeholder="ID"><br>
-								<span style="font-weight: bold">PW : </span><br> <input
-									type="password" id="password" name="password"
-									placeholder="Password"><br> <input type="button"
-									id="login" name="login" value="로그인">
+							<form id="loginForm" action="/wMemo/login/loginProc" method="post">
+								<table>
+									<tr>
+										<th>
+											<span style="font-weight: bold">ID : </span>
+										</th>
+										<td>
+											<input type="text" id="id" name="id" placeholder="ID" autofocus tabindex="1">
+										</td>
+										<td rowspan="2">
+											<input type="button" id="login" name="login" value="로그인"  tabindex="3">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<span style="font-weight: bold">PW : </span>
+										</th>
+										<td>
+											<input type="password" id="password" name="password" placeholder="Password" tabindex="2">
+										</td>
+									</tr>
+								</table>
 							</form>
-							<a href="/wMemo/login/regId">회원가입</a> | <a href="/wMemo/login/findId">아이디 찾기</a> | <a href="/wMemo/login/findPw">비밀번호 찾기</a><br>
-							<button onclick="location.href='/wMemo/'">메인 화면</button>
+							<a href="/wMemo/login/regId" tabindex="4">회원가입</a> | <a href="/wMemo/login/findId" tabindex="5">아이디 찾기</a> | <a href="/wMemo/login/findPw" tabindex="6">비밀번호 찾기</a><br>
 						</div>
 					</div>
 				</div>

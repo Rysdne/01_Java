@@ -77,16 +77,37 @@ $(function() {
 					<div id="postit_box">
 						<div id="postit_login">
 							<form id="regIdForm" action="/wMemo/login/regIdProc" method="post">
-								<span style="font-weight: bold">ID : </span><br>
-								<input type="text" id="id" name="id" placeholder="ID"><br>
-								<span style="font-weight: bold">PW : </span><br>
-								<input type="password" id="password" name="password" placeholder="Password"><br>
-								<span style="font-weight: bold">Email : </span><br>
-								<input type="text" id="email" name="email" placeholder="Email Address"><br>
-								<input type="button" id="create" name="create" value="계정 생성">
+								<table>
+									<tr>
+										<th>
+											<span style="font-weight: bold">ID : </span><br>
+										</th>
+										<td>
+											<input type="text" id="id" name="id" placeholder="ID"><br>
+										</td>
+										<td rowspan="3">
+											<input type="button" id="create" name="create" value="계정 생성">
+										</td>
+									</tr>
+									<tr>
+										<th>								
+											<span style="font-weight: bold">PW : </span>
+										</th>
+										<td>
+											<input type="password" id="password" name="password" placeholder="Password"><br>
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<span style="font-weight: bold">Email : </span>
+										</th>
+										<td>
+											<input type="text" id="email" name="email" placeholder="Email Address"><br>
+										</td>
+									</tr>
+								</table>
 							</form>
-							<a href="/wMemo/login/findId">아이디 찾기</a> | <a href="/wMemo/login/findPw">비밀번호
-								찾기</a><br>
+							<a href="/wMemo/login/findId">아이디 찾기</a> | <a href="/wMemo/login/findPw">비밀번호 찾기</a><br><br>
 							<button onclick="location.href='/wMemo/'">메인 화면</button>
 						</div>
 					</div>
