@@ -10,10 +10,6 @@
 <script>
 	$(function() {
 		var uId = $('#id').val();
-		var now = new Date();
-		var splitYear = now.getFullYear();
-		var splitMonth = ("0" + (now.getMonth() + 1)).slice(-2);
-		var currentMonth = splitYear + "-" + splitMonth;
 		$('.aside_sideMenu_butt').click(function() {
 			var currId = $(this).attr('id');
 			if(currId=="bookmark"){
@@ -28,6 +24,19 @@
 					type : "post",
 					dataType : "text",
 					data : {"id":uId},
+					success : function(result) {
+						$('#aside_box').html(result);
+					}
+				});
+			} else if (currId=="record") {
+				$.ajax({
+					url : "/wMemo/record/recordOption",
+					success : function(result) {
+						$('#aside_option').html(result);
+					}
+				});
+				$.ajax({
+					url : "/wMemo/record/record",
 					success : function(result) {
 						$('#aside_box').html(result);
 					}
@@ -49,10 +58,6 @@
 	    	var id=$('#id').val();
 	    	var title=$('#title').val();
 	    	var input=$('#input').val();
-	    	//if(id==""){
-	    	//	alert('계정 정보를 입력해주세요');
-	    	//	return;
-	    	//}
 	    	if(title==""){
 	    		alert('타이틀을 입력해주세요');
 	    		return;
@@ -69,7 +74,6 @@
 				location.href = "/wMemo/memo/deleteProc?idx=" + idx + "&id=" + id + "&preSubfolder=" + preSubfolder;	
 			};
 		});
-
 	});
 </script>
 <div id="content">
@@ -84,17 +88,12 @@
 						</div>
 					</li>
 					<li>
-						<div id="microphone" class="aside_sideMenu_butt">
+						<div id="record" class="aside_sideMenu_butt">
 							<i class="fa-solid fa-microphone"></i>
 						</div>
 					</li>
 					<li>
-						<div id="language" class="aside_sideMenu_butt">
-							<i class="fa-solid fa-language"></i>
-						</div>
-					</li>
-					<li>
-						<div id="paste" class="aside_sideMenu_butt">
+						<div id="paste" class="aside_sideMenu_butt_disabled">
 							<i class="fa-solid fa-paste"></i>
 						</div>
 					</li>
@@ -111,10 +110,10 @@
 		<div id="main_memo">
 			<div id="main_memoHeader">
 				<ul>
-					<li onclick="location.href='/wMemo/'">공지</li>
-					<li onclick="location.href='/wMemo/memo/create'">새 메모</li>
-					<li id="save">저장</li>
-					<li id="delete">삭제</li>
+					<li onclick="location.href='/wMemo/'">Home</li>
+					<li onclick="location.href='/wMemo/memo/create'" style="background-color:rgb(249, 249, 104);">New</li>
+					<li id="save">Write</li>
+					<li id="delete">Delete</li>
 				</ul>
 			</div>
 			<div id="main_memoBody">

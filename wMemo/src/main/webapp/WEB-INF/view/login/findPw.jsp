@@ -38,13 +38,8 @@
 						</div>
 					</li>
 					<li>
-						<div id="microphone" class="aside_sideMenu_butt_disabled">
+						<div id="speech" class="aside_sideMenu_butt_disabled">
 							<i class="fa-solid fa-microphone"></i>
-						</div>
-					</li>
-					<li>
-						<div id="language" class="aside_sideMenu_butt_disabled">
-							<i class="fa-solid fa-language"></i>
 						</div>
 					</li>
 					<li>
@@ -65,10 +60,7 @@
 		<div id="main_memo">
 			<div id="main_memoHeader">
 				<ul>
-					<li>공지</li>
-					<li>새 메모</li>
-					<li>수정</li>
-					<li>삭제</li>
+					<li onclick="location.href='/wMemo/'">Home</li>
 				</ul>
 			</div>
 			<div id="main_memoBody">
@@ -81,28 +73,27 @@
 								<table>
 									<tr>								
 										<th>
-											<span style="font-weight: bold">ID : </span>
+											<span style="font-weight: bold">ID</span>
 										</th>
 										<td>
-											<input type="text" id="id" name="id" placeholder="ID">
+											 : <input type="text" id="id" name="id" class="login_input" tabindex="1">
 										</td>
 										<td rowspan="2">
-											<input type="button" id="findPw" name="findPw" value="조회">
+											<input type="button" id="findPw" name="findPw" class="summit_butt" value="조회" tabindex="3">
 										</td>
 									</tr>
 									<tr>
 										<th>
-											<span style="font-weight: bold">Email : </span>
+											<span style="font-weight: bold">Email</span>
 										</th>
 										<td>
-											<input type="text" id="email" name="email" placeholder="Email Address">
+											 : <input type="text" id="email" name="email" class="login_input" tabindex="2">
 										</td>
 									</tr>
 								</table>
 							</form>
-							<a href="/wMemo/login/login">로그인</a> | <a href="/wMemo/login/findId">아이디 찾기</a>
-							<br><br>
-							<button onclick="location.href='/wMemo/'">메인 화면</button>
+							<br>
+							<a href="/wMemo/login/login" tabindex="4">로그인</a> | <a href="/wMemo/login/findId" tabindex="5">아이디 찾기</a>
 						</div>
 					</div>
 				</div>

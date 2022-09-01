@@ -33,14 +33,13 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView();
 		boolean result = service.login(req);
 		if (result) {
-			mv.addObject("content", "home/main.jsp");
 			System.out.println("로그인 성공");
+			mv.addObject("content", "home/main.jsp");
 		} else {
-			// 로그인 페이지 이동
-			mv.addObject("content", "login/loginFailed.jsp");
 			System.out.println("로그인 실패");
+			mv.addObject("content", "login/loginFailed.jsp");
 		}
-		mv.setViewName("index");
+		mv.setViewName("index");		
 		return mv;
 	}
 	// ...............................................................

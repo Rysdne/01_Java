@@ -38,13 +38,8 @@ $(function() {
 						</div>
 					</li>
 					<li>
-						<div id="microphone" class="aside_sideMenu_butt_disabled">
+						<div id="speech" class="aside_sideMenu_butt_disabled">
 							<i class="fa-solid fa-microphone"></i>
-						</div>
-					</li>
-					<li>
-						<div id="language" class="aside_sideMenu_butt_disabled">
-							<i class="fa-solid fa-language"></i>
 						</div>
 					</li>
 					<li>
@@ -65,50 +60,51 @@ $(function() {
 		<div id="main_memo">
 			<div id="main_memoHeader">
 				<ul>
-					<li>공지</li>
-					<li>새 메모</li>
-					<li>수정</li>
-					<li>삭제</li>
+					<li onclick="location.href='/wMemo/'">
+					<div class="main_memoList">
+					Home
+					</div>
+					</li>
 				</ul>
 			</div>
 			<div id="main_memoBody">
 				<div id="form_frame">
-					<input readonly type="text" id="title_disabled" name="title_disabled" placeholder="로그인">
+					<input readonly type="text" id="title_disabled" name="title_disabled" placeholder="회원 가입">
 					<div id="postit_box">
 						<div id="postit_login">
 							<form id="regIdForm" action="/wMemo/login/regIdProc" method="post">
 								<table>
 									<tr>
 										<th>
-											<span style="font-weight: bold">ID : </span><br>
+											<span style="font-weight: bold">ID</span><br>
 										</th>
 										<td>
-											<input type="text" id="id" name="id" placeholder="ID"><br>
+											 : <input type="text" id="id" name="id" class="login_input" tabindex="1"><br>
 										</td>
 										<td rowspan="3">
-											<input type="button" id="create" name="create" value="계정 생성">
+											<input type="button" id="create" name="create" class="summit_butt" value="계정 생성" tabindex="4">
 										</td>
 									</tr>
 									<tr>
 										<th>								
-											<span style="font-weight: bold">PW : </span>
+											<span style="font-weight: bold">PW</span>
 										</th>
 										<td>
-											<input type="password" id="password" name="password" placeholder="Password"><br>
+											 : <input type="password" id="password" name="password" class="login_input" tabindex="2"><br>
 										</td>
 									</tr>
 									<tr>
 										<th>
-											<span style="font-weight: bold">Email : </span>
+											<span style="font-weight: bold">Email</span>
 										</th>
 										<td>
-											<input type="text" id="email" name="email" placeholder="Email Address"><br>
+											 : <input type="text" id="email" name="email" class="login_input" tabindex="3"><br>
 										</td>
 									</tr>
 								</table>
 							</form>
-							<a href="/wMemo/login/findId">아이디 찾기</a> | <a href="/wMemo/login/findPw">비밀번호 찾기</a><br><br>
-							<button onclick="location.href='/wMemo/'">메인 화면</button>
+							<br>
+							<a href="/wMemo/login/findId" tabindex="5">아이디 찾기</a> | <a href="/wMemo/login/findPw" tabindex="6">비밀번호 찾기</a><br><br>
 						</div>
 					</div>
 				</div>

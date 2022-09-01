@@ -14,7 +14,7 @@
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%
 //주의사항:폴더경로를 복사하고 \는 특수문자이므로 \를 하나 더 추가해야함.
-String savePath="C:\\Users\\Rysdne\\Desktop\\Rysdne\\Document\\01. Java\\work\\uploadtest\\src\\main\\webapp\\file";
+String savePath="C:\\hrdkorea\\test\\src\\main\\webapp\\file";
 int fileSize=10*1024*1024;
 MultipartRequest multi
 =new MultipartRequest

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link href="/wMemo/css/content/style.css" type="text/css"
-	rel="stylesheet" />
+<link href="/wMemo/css/content/style.css" type="text/css" rel="stylesheet" />
 <script>
 	$(function() {
 		$('#login').click(function() {
@@ -27,13 +26,8 @@
 						</div>
 					</li>
 					<li>
-						<div id="microphone" class="aside_sideMenu_butt_disabled">
+						<div id="speech" class="aside_sideMenu_butt_disabled">
 							<i class="fa-solid fa-microphone"></i>
-						</div>
-					</li>
-					<li>
-						<div id="language" class="aside_sideMenu_butt_disabled">
-							<i class="fa-solid fa-language"></i>
 						</div>
 					</li>
 					<li>
@@ -54,42 +48,39 @@
 		<div id="main_memo">
 			<div id="main_memoHeader">
 				<ul>
-					<li>공지</li>
-					<li>새 메모</li>
-					<li>수정</li>
-					<li>삭제</li>
+					<li onclick="location.href='/wMemo/'">Home</li>
 				</ul>
 			</div>
 			<div id="main_memoBody">
 				<div id="form_frame">
-					<input readonly type="text" id="title_disabled"
-						name="title_disabled" placeholder="로그인">
+					<input readonly type="text" id="title_disabled" name="title_disabled" placeholder="로그인">
 					<div id="postit_box">
 						<div id="postit_login">
 							<form id="loginForm" action="/wMemo/login/loginProc" method="post">
 								<table>
 									<tr>
 										<th>
-											<span style="font-weight: bold">ID : </span>
+											<span style="font-weight: bold">ID</span>
 										</th>
 										<td>
-											<input type="text" id="id" name="id" placeholder="ID" autofocus tabindex="1">
+											 : <input type="text" id="id" name="id" class="login_input" tabindex="1">
 										</td>
 										<td rowspan="2">
-											<input type="button" id="login" name="login" value="로그인"  tabindex="3">
+											<input type="button" id="login" name="login" class="summit_butt" value="로그인" tabindex="3">
 										</td>
 									</tr>
 									<tr>
 										<th>
-											<span style="font-weight: bold">PW : </span>
+											<span style="font-weight: bold">PW</span>
 										</th>
 										<td>
-											<input type="password" id="password" name="password" placeholder="Password" tabindex="2">
+											 : <input type="password" id="password" name="password" class="login_input" tabindex="2">
 										</td>
 									</tr>
 								</table>
 							</form>
-							<a href="/wMemo/login/regId" tabindex="4">회원가입</a> | <a href="/wMemo/login/findId" tabindex="5">아이디 찾기</a> | <a href="/wMemo/login/findPw" tabindex="6">비밀번호 찾기</a><br>
+							<br>
+							<a href="/wMemo/login/regId" tabindex="4">회원 가입</a> | <a href="/wMemo/login/findId" tabindex="5">아이디 찾기</a> | <a href="/wMemo/login/findPw" tabindex="6">비밀번호 찾기</a><br>
 						</div>
 					</div>
 				</div>

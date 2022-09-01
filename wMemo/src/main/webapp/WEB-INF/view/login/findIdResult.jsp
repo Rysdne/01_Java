@@ -48,10 +48,7 @@
 		<div id="main_memo">
 			<div id="main_memoHeader">
 				<ul>
-					<li>공지</li>
-					<li>새 메모</li>
-					<li>수정</li>
-					<li>삭제</li>
+					<li onclick="location.href='/wMemo/'">Home</li>
 				</ul>
 			</div>
 			<div id="main_memoBody">
@@ -61,8 +58,9 @@
 					<div id="postit_box">
 						<div id="postit_login">
 							조회하신 계정 아이디는<br>
-							<h3>${result.id}</h1><br> 입니다<br>
-							<a href="/wMemo/login/loginForm">로그인</a> | <a href="/wMemo/login/findPw">비밀번호 찾기</a>
+							<h3>${result.id}</h1> 입니다<br>
+							<br>
+							<a href="/wMemo/login/login" tabindex="1">로그인</a> | <a href="/wMemo/login/findPw" tabindex="2">비밀번호 찾기</a>
 						</div>
 					</div>
 				</div>

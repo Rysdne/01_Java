@@ -32,13 +32,8 @@
 						</div>
 					</li>
 					<li>
-						<div id="microphone" class="aside_sideMenu_butt_disabled">
+						<div id="speech" class="aside_sideMenu_butt_disabled">
 							<i class="fa-solid fa-microphone"></i>
-						</div>
-					</li>
-					<li>
-						<div id="language" class="aside_sideMenu_butt_disabled">
-							<i class="fa-solid fa-language"></i>
 						</div>
 					</li>
 					<li>
@@ -59,29 +54,40 @@
 		<div id="main_memo">
 			<div id="main_memoHeader">
 				<ul>
-					<li>공지</li>
-					<li>새 메모</li>
-					<li>수정</li>
-					<li>삭제</li>
+					<li onclick="location.href='/wMemo/'">Home</li>
 				</ul>
 			</div>
 			<div id="main_memoBody">
 				<div id="form_frame">
 					<input readonly type="text" id="title_disabled"
-						name="title_disabled" placeholder="패스워드 변경">
+						name="title_disabled" placeholder="PW 변경">
 					<div id="postit_box">
 						<div id="postit_login">
-							<form id="pwResetForm" action="/wMemo/login/pwResetProc"
-								method="post">
-								<span style="font-weight: bold">ID : </span> <input readonly
-									type="text" id="id" name="id" value="${result.id}"><br>
-								<span style="font-weight: bold">PW : </span> <input
-									type="password" id="password" name="password"
-									placeholder="Password"><br> <input type="button"
-									id="reset" name="reset" value="재설정">
+							<form id="pwResetForm" action="/wMemo/login/pwResetProc" method="post">
+								<table>
+									<tr>
+										<th>
+											<span style="font-weight: bold">ID</span>
+										</th>
+										<td>
+											 : <input readonly type="text" id="id" name="id" class="login_input" style="color:dimgray;" value="${result.id}"><br>
+										</td>
+										<td rowspan="2">
+											<input type="button" id="reset" name="reset" class="summit_butt" value="재설정" tabindex="2">
+										</td>
+									</tr>
+									<tr>
+										<th>
+											<span style="font-weight: bold">PW</span>
+										</th>
+										<td>
+											 : <input type="password" id="password" name="password" class="login_input" tabindex="1">
+										</td>
+									</tr>
+								</table>	
 							</form>
-							<a href="/wMemo/login/regId">회원가입</a> | <a href="/wMemo/login/findId">아이디 찾기</a><br>
-							<button onclick="location.href='/wMemo/'">메인 화면</button>
+							<br>
+							<a href="/wMemo/login/regId" tabindex="3">회원가입</a> | <a href="/wMemo/login/findId" tabindex="4">아이디 찾기</a><br>
 						</div>
 					</div>
 				</div>

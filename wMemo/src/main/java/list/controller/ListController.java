@@ -15,6 +15,13 @@ public class ListController {
 
 	// ===============================================================
 	
+	@RequestMapping("/listOption")
+	public ModelAndView listOption() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("listOption");
+		return mv;
+	}
+
 	@RequestMapping("/listAll")
 	public ModelAndView listAll(String id) {
 		ModelAndView mv = new ModelAndView();
@@ -23,13 +30,6 @@ public class ListController {
 		return mv;
 	}
 
-	@RequestMapping("/listOption")
-	public ModelAndView listOption() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("listOption");
-		return mv;
-	}
-	
 	@RequestMapping("/listMonth")
 	public ModelAndView listMonth(String id, String idxMonth) {
 		ModelAndView mv = new ModelAndView();

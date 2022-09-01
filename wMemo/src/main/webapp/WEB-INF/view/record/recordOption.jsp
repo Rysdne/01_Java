@@ -4,55 +4,29 @@
 <link href="/wMemo/css/content/style.css" type="text/css" rel="stylesheet" />
 <script>
 	$(function() {
-		
-		
-		
-		
-// 		var uId = $('#optionId').val();
-// 		$('#listMonth').click(function() {
-// 			var _month = $('#month').val();
-// 			alert(_month);
-// 			var mArray = _month.split("-");
-// 			var idxMonth = mArray[0] + mArray[1];
-// 			$.ajax({
-// 				url : "/wMemo/list/listMonth",
-// 				type : "post",
-// 				dataType : "text",
-// 				data : {"id":uId, "idxMonth":idxMonth},
-// 				success : function(result) {
-// 					$('#aside_box').html(result);
-// 				}
-// 			});
-// 		});
-// 		$('#listClear').click(function() {
-// 			$.ajax({
-// 				url : "/wMemo/list/listOption",
-// 				success : function(result) {
-// 					$('#aside_option').html(result);
-// 				}
-// 			});
-// 			$.ajax({
-// 				url : "/wMemo/list/listAll",
-// 				type : "post",
-// 				dataType : "text",
-// 				data : {"id":uId},
-// 				success : function(result) {
-// 					$('#aside_box').html(result);
-// 				}
-// 			});
-// 		});
+		var uId=$('#id').val();
+		$('#recordForm_butt').click(function() {
+			$.ajax({
+				url : "/wMemo/record/record",
+				success : function(result) {
+					$('#aside_box').html(result);
+				}
+			});
+		});
+		$('#recordList_butt').click(function() {
+			$.ajax({
+				url : "/wMemo/record/recordList",
+				type : "post",
+				dataType : "text",
+				data : {"id":uId},
+				success : function(result) {
+					$('#aside_box').html(result);
+				}
+			});
+		});
+
 	});
 </script>
-
-<select id="speech">
-<option value="ko">한글</option>
-<option value="en">English</option>
-</select>
->>
-<select id="text">
-<option value="ko">한글</option>
-<option value="en">English</option>
-</select>
-
-<button id="listMonth">검색</button>
-<button id="listClear">초기화</button>
+<input type="hidden" id="id" name="id" value="${sessionScope.id}">
+<button id="recordForm_butt">녹음</button>
+<button id="recordList_butt">조회</button>

@@ -32,13 +32,8 @@
 						</div>
 					</li>
 					<li>
-						<div id="microphone" class="aside_sideMenu_butt_disabled">
+						<div id="speech" class="aside_sideMenu_butt_disabled">
 							<i class="fa-solid fa-microphone"></i>
-						</div>
-					</li>
-					<li>
-						<div id="language" class="aside_sideMenu_butt_disabled">
-							<i class="fa-solid fa-language"></i>
 						</div>
 					</li>
 					<li>
@@ -59,10 +54,7 @@
 		<div id="main_memo">
 			<div id="main_memoHeader">
 				<ul>
-					<li>공지</li>
-					<li>새 메모</li>
-					<li>수정</li>
-					<li>삭제</li>
+					<li onclick="location.href='/wMemo/'">Home</li>
 				</ul>
 			</div>
 			<div id="main_memoBody">
@@ -74,20 +66,20 @@
 								<table>
 									<tr>
 										<th>
-											<span style="font-weight: bold">Email : </span>
+											<span style="font-weight: bold">Email</span>
 										</th>
 										<td>
-											<input type="text" id="email" name="email" placeholder="Email Address">
+											 : <input type="text" id="email" name="email" class="login_input" tabindex="1">
 										</td>
 										<td>
-											<input type="button" id="findId" name="findId" value="조회">
+											<input type="button" id="findId" name="findId" class="summit_butt" value="조회" tabindex="2">
 										</td>
 									</tr>
 								</table>
 							</form>
-							<a href="/wMemo/login/login">로그인</a> | <a href="/wMemo/login/findPw">비밀번호 찾기</a>
+							<br>
+							<a href="/wMemo/login/login" tabindex="3">로그인</a> | <a href="/wMemo/login/findPw" tabindex="4">비밀번호 찾기</a>
 							<br><br>
-							<button onclick="location.href='/wMemo/'">메인 화면</button>
 						</div>
 					</div>
 				</div>

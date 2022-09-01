@@ -24,6 +24,7 @@ public class MemoDAO implements MemoDaoInter {
 
 	Connection conn;
 	PreparedStatement pstmt;
+	String basePath = "C:\\Users\\Rysdne\\Desktop\\Rysdne\\Document\\01. Java\\work\\wMemo\\src\\main\\webapp\\file\\";
 
 	public MemoDAO() {
 		try {
@@ -54,8 +55,7 @@ public class MemoDAO implements MemoDaoInter {
 				String loaded = "";
 				String line;
 
-				String folderPath = "C:\\Users\\Rysdne\\Desktop\\Rysdne\\Document\\01. Java\\work\\wMemo\\src\\main\\webapp\\file\\"
-						+ id;
+				String folderPath = basePath + id;
 				String subFolderPath = folderPath + "\\" + subfolder;
 				String filePath = subFolderPath + "\\" + idx;
 
@@ -86,7 +86,7 @@ public class MemoDAO implements MemoDaoInter {
 			// 이런 일련번호가 있어야 title을 자유롭게 사용 가능
 			String idx = _time.format(DateTimeFormatter.ofPattern("yyyyMMddHHmmss"));
 			// long idx=Integer.parseInt(_idx);
-			String cdate = _time.format(DateTimeFormatter.ofPattern("yyyy.MM.dd"));
+			String cdate = _time.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 			String ctime = _time.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 
 			// 2) 사용자 이름
@@ -108,8 +108,7 @@ public class MemoDAO implements MemoDaoInter {
 			// 저장 경로 : C:\Users\Rysdne\Desktop\Rysdne\Document\01.
 			// Java\work\wMemo\src\main\webapp\WEB-INF\static\file
 			// 폴더명 : 입력받은 id로 자동 설정
-			String folderPath = "C:\\Users\\Rysdne\\Desktop\\Rysdne\\Document\\01. Java\\work\\wMemo\\src\\main\\webapp\\file\\"
-					+ id;
+			String folderPath = basePath + id;
 			String subFolderPath = folderPath + "\\" + subfolder;
 			String filePath = subFolderPath + "\\" + fileName;
 
@@ -131,7 +130,6 @@ public class MemoDAO implements MemoDaoInter {
 			// // 7) 작성한 메모를 txt 파일로 저장
 			bw.write(memo);
 			System.out.println("파일 저장됨");
-			System.out.println(filePath);
 
 			bw.close();
 			fos.close();
@@ -171,7 +169,7 @@ public class MemoDAO implements MemoDaoInter {
 			// 이런 일련번호가 있어야 title을 자유롭게 사용 가능
 			String idx = req.getParameter("idx");
 			// long idx=Integer.parseInt(_idx);
-			String cdate = _time.format(DateTimeFormatter.ofPattern("yyyy.MM.dd"));
+			String cdate = _time.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
 			String ctime = _time.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 
 			// 2) 사용자 이름
@@ -197,8 +195,7 @@ public class MemoDAO implements MemoDaoInter {
 			// 저장 경로 : C:\Users\Rysdne\Desktop\Rysdne\Document\01.
 			// Java\work\wMemo\src\main\webapp\WEB-INF\static\file
 			// 폴더명 : 입력받은 id로 자동 설정
-			String folderPath = "C:\\Users\\Rysdne\\Desktop\\Rysdne\\Document\\01. Java\\work\\wMemo\\src\\main\\webapp\\file\\"
-					+ id;
+			String folderPath = basePath + id;
 
 			String preFolderPath = folderPath + "\\" + preSubfolder;
 			String preFilePath = preFolderPath + "\\" + fileName;
@@ -233,7 +230,6 @@ public class MemoDAO implements MemoDaoInter {
 			// // 7) 작성한 메모를 txt 파일로 저장
 			bw.write(memo);
 			System.out.println("파일 수정됨");
-			System.out.println(filePath);
 
 			bw.close();
 			fos.close();
@@ -270,8 +266,7 @@ public class MemoDAO implements MemoDaoInter {
 		String fileName = idx;
 
 		// 2) 파일 경로
-		String folderPath = "C:\\Users\\Rysdne\\Desktop\\Rysdne\\Document\\01. Java\\work\\wMemo\\src\\main\\webapp\\file\\"
-				+ id;
+		String folderPath = basePath + id;
 
 		String preFolderPath = folderPath + "\\" + preSubfolder;
 		String preFilePath = preFolderPath + "\\" + fileName;

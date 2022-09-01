@@ -67,17 +67,49 @@ aside {
 #aside_box {
 	background-color: lightgray;
 	flex-grow: 1;
-	position:relative;
+	position: relative;
+	overflow-x: hidden;
 	overflow-y: auto;
 }
 
 /* --- listPart ------------------------------------------ */
+.ellipsis {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border-bottom: 1px solid lightgray;
+}
+
 #tBody:hover {
 	background-color: lightgray;
 }
 
-.idxIdHidden {
+.hidden {
 	display: none;
+}
+
+/* --- recordPart ----------------------------------------- */
+#recordBox {
+	text-align: center;
+}
+
+#recordState {
+	color: dimgray;
+}
+
+#textWrapper {
+	margin: 0 auto;
+}
+
+.textbox {
+	width: 38vh;
+	background-color: whitesmoke;
+	margin: 0 auto;
+	padding: 3px 5px;
+	border: 1px solid #d3d3d3;
+	border-radius: 10px;
+	text-align: left;
+	overflow-y: auto;
 }
 
 /* -------------------------------------------------------- */
@@ -110,13 +142,23 @@ main {
 #main_memoHeader ul li {
 	width: 10vh;
 	height: 4vh;
+	margin-right: 0.5vh;
 	float: left;
 	background-color: sandybrown;
 	text-align: center;
 	line-height: 4vh;
+	border:2px dashed rgba(0,0,0,0.1);
+	border-bottom: 1px solid gray;
+	border-top-left-radius:10px;
+	border-top-right-radius:10px;	
+	box-sizing: border-box;
+	font-weight: bold;
+	font-size: 1.2rem;
+	color: rgb(53, 53, 53);
 }
 
 #main_memoHeader ul li:first-child {
+	margin-left: 3vh;
 	background-color: tomato;
 }
 
@@ -143,7 +185,7 @@ main {
 	margin-bottom: 2vh;
 	border-style: none;
 	border-bottom: 2px solid lightgray;
-	background-color: whitesmoke;
+	background-color: rgba(0,0,0,0);
 	font-size: 2.5rem;
 }
 
@@ -159,7 +201,7 @@ main {
 	margin-bottom: 2vh;
 	border-style: none;
 	border-bottom: 2px solid lightgray;
-	background-color: whitesmoke;
+	background-color: rgba(0,0,0,0);
 	font-size: 1rem;
 }
 
@@ -173,10 +215,7 @@ main {
 	height: 70vh;
 	overflow: auto;
 	font-size: 16pt;
-}
-
-#input:focus {
-	outline-color: lightgray;
+	outline: 2px dashed lightgray;
 }
 
 /* --- loginPart ------------------------------------------ */
@@ -217,8 +256,41 @@ main {
 
 #postit_login {
 	margin: 10vh 0;
-	margin-left: 8vh;
+	margin-left: 13vh;
 	width: 40vh;
+	overflow:auto;
+}
+
+#postit_login th {
+	font-size:15pt;
+	padding-right:5px;
+}
+
+#postit_login a {
+	font-weight:bold;
+	color:rebeccapurple;
+}
+
+.login_input {
+	width: 15vh;
+	font-size:14pt;
+	border: 0;
+	border-bottom: 1px solid black;
+	background-color: rgba(0,0,0,0);
+}
+.login_input:focus {
+	background-color: rgba(0,0,0,0.1)	
+}
+.summit_butt {
+	width: 100px;
+	height: 50px;
+	background-color: rgba(0,0,0,0.1);
+	margin: 0 auto;
+	margin-left: 10px;
+	border:2px dashed black;
+	border-radius: 10px;
+	font-size: 15pt;
+	font-weight: bold;
 }
 
 /* -------------------------------------------------------- */

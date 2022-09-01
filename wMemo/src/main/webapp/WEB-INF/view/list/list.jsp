@@ -16,22 +16,22 @@
 	});
 </script>
 <table style="background-color:white;">
-	<tr class="idxHidden" style="border:1px solid lightgray; background-color:rebeccapurple; color:white;">
-		<th class="idxIdHidden">idx</th>
-		<th class="idxIdHidden">계정</th>
-		<th>폴더</th>
-		<th>타이틀</th>
-		<th>수정일</th>
-		<th>수정시간</th>
+	<tr style="background-color:rebeccapurple; color:white;">
+		<th class="hidden">idx</th>
+		<th class="hidden">계정</th>
+		<th style="width: 10vh;">폴더</th>
+		<th style="width: 20vh;">타이틀</th>
+		<th style="width: 10vh;">수정일</th>
+		<th class="hidden">수정시간</th>
 	</tr>
 	<c:forEach var="memo" items="${memoList}">
 	<tr id="tBody" style="border:1px solid lightgray;">
-		<td class="idxIdHidden"><c:out value="${memo.idx}"/></td>
-		<td class="idxIdHidden"><c:out value="${memo.id}"/></td>
-		<td><c:out value="${memo.subfolder}"/></td>
-		<td><c:out value="${memo.title}"/></td>
-		<td><c:out value="${memo.cdate}"/></td>
-		<td><c:out value="${memo.ctime}"/></td>
+		<td class="hidden"><c:out value="${memo.idx}"/></td>
+		<td class="hidden"><c:out value="${memo.id}"/></td>
+		<td><div class="ellipsis" style="width: 10vh;"><c:out value="${memo.subfolder}"/></div></td>
+		<td><div class="ellipsis" style="width: 20vh;"><c:out value="${memo.title}"/></div></td>
+		<td><div class="ellipsis" style="width: 10vh;"><c:out value="${memo.cdate}"/></div></td>
+		<td class="hidden"><c:out value="${memo.ctime}"/></td>
 	</tr>
 	</c:forEach>
 </table>
