@@ -13,8 +13,9 @@ public class HomeService implements HomeServiceInter{
 
 	@Override
 	public void wTableCheck() {
-		dao.wMemoCheck();
 		dao.wUidCheck();
+		dao.wMemoCheck();
+		dao.wRecCheck();
 	}
 	
 }

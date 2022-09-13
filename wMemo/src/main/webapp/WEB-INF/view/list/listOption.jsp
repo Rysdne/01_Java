@@ -10,7 +10,8 @@
 	$(function() {
 		var uId = $('#optionId').val();
 		$('#listMonth').click(function() {
-			var _month = $('#month').val();
+			alert('click');
+			var _month = $('#monthSelect').val();
 			var mArray = _month.split("-");
 			var idxMonth = mArray[0] + mArray[1];
 			$.ajax({
@@ -22,6 +23,7 @@
 					$('#aside_box').html(result);
 				}
 			});
+			alert('ok');
 		});
 		$('#listClear').click(function() {
 			$.ajax({
@@ -42,7 +44,7 @@
 		});
 	});
 </script>
-<input type="hidden" id="optionId" name="optionId" value="${sessionScope.id}">
-<input type="month" id="month" name="month">
-<button id="listMonth">검색</button>
-<button id="listClear">초기화</button>
+	<input type="hidden" id="optionId" name="optionId" value="${sessionScope.id}">
+	<input type="month" id="monthSelect" name="monthSelect" style="width:50%; height:4vh; margin-left: 1vh; font-size:1.5rem;">
+	<button id="listMonth" style="width:20%; height:4vh;">검색</button>
+	<button id="listClear" style="width:20%; height:4vh;">초기화</button>

@@ -61,32 +61,81 @@ border:1px solid gray;
 
 <script>
 $(function (){
-	//alert('test');
-	$('#btn').click(function(){
-		//$('#reply').prepend("a<br>");
-		//$('#reply').prepend("<input type='text' readonly value='"+$("#replyin").val()+"'>","<br>");
-		var v=$("#replyin").val();
-		$('#reply')
-		.prepend("<input type='text' readonly value='"+v+"'>","<br>");
-		$('#reply').prepend("<img src='/file/my.gif'>");
-		
-		//javascript에서는 
-		//jsp코드가 동작하지 않으므로 ajax를 이용하여 url처리
-		
-		$.ajax({
-			url:"/reply.jsp",
-			data:{idx:'<%=idx%>',reply:$("#replyin").val()},
-			success: function(result){
-				alert(result);
-			}
-		});
+	
+	/* 키보드를 확인하는 코드*/
+	/*
+	$(document).keyup(function(event) {
+	    if (event.which === 13) {
+	        alert('Enter is pressed!');
+	    }
 	});
-	$(document).keyup(function(event){
-		if(event.which == 13){
+	*/
+	/*
+	$(document).keypress(function(e){
+		    if(e.keyCode==13) 
 			alert('Enter is pressed!');
-		};
+	});
+	*/
+	
+//alert('test');
+$('#btn').click(function(){
+	//$('#reply').prepend("a<br>");
+	//$('#reply').prepend("<input type='text' readonly value='"+$("#replyin").val()+"'>","<br>");
+	var v=$("#replyin").val();
+	$('#reply').prepend("<input type='text' readonly value='"+v+"'>","<br>");
+	$('#reply').prepend("<img src='/file/my.gif'>");
+	
+	//javascript에서는 
+	//jsp코드가 동작하지 않으므로 ajax를 이용하여 url처리
+	
+	$.ajax({
+		url:"/reply.jsp",
+		data:{idx:'<%=idx%>',reply:$("#replyin").val()},
+		success: function(result){
+			alert(result);
+			//if(result==1){ alert('댓글이 입력되었습니다.!');}
+			//else{alert('댓글 입력 실패!');}
+		}
+	});
+	
+	$("#replyin").val("");
+	
+});
+
+$(document).keyup(function(event) {
+	
+	var v=$("#replyin").val();
+	
+    if (event.which === 13 && v!="") {
+    	
+    	$('#reply').prepend("<input type='text' readonly value='"+v+"'>","<br>");
+    	$('#reply').prepend("<img src='/file/my.gif'>");
+    
+    	$.ajax({
+    		url:"/reply.jsp",
+    		data:{idx:'<%=idx%>',reply:$("#replyin").val()},
+    		success: function(result){
+   				
+    		}
+    	});
+    	
+    	$("#replyin").val("");
+    }
+});
+
+//더보기 처리
+$("#addreply").click(function(){
+	$.ajax({
+		url:"/addreply.jsp",
+		data:{idx:'<%=idx%>',page:'1'},
+		success: function(result){
+			$("#reply").append(result);
+		}
 	});
 });
+
+});
+
 /*
 var i=1;
 function replyinput(){
@@ -106,42 +155,40 @@ function replyinput(){
 <p><%=content%></p>
 </div>
 
-<!--
 <div id="replyInput">
 <img src="/file/reply.gif">
 댓글입력:<input type="text" id="replyin">
 <input type="button" value="입력"  id="btn" onclick="replyinput()">
 </div>
--->
 
-
-<%
-sql="select * from reply where idx=?";
-pstmt=conn.prepareStatement(sql);
-pstmt.setInt(1,Integer.parseInt(request.getParameter("idx")));
-rs=pstmt.executeQuery();
-
-
-while(rs.next()){
-	%>
-<div id="reply">
-<img src="/file/my.gif">
-<input type="text" readonly value="<%=rs.getString("reply")%>"><br>
-</div>
-	<%
-}
-
-rs.close();
-pstmt.close();
-conn.close();
-
-%>
-
-
+<!-- 
 <div id="reply">
 <img src="/file/my.gif">
 <input type="text" readonly value="댓글테스트"><br>
-</div>
+</div> 
+-->
+<!-- 책 댓글 불러오기 -->
+<%
+//sql="select * from bookreply where book_idx=? order by idx desc";
+sql="select * from (select rownum r,t.* from (select bookreply.* from bookreply where book_idx=? order by idx desc) t) where r between 1 and 5";
+pstmt=conn.prepareStatement(sql);
+pstmt.setInt(1, 
+Integer.parseInt(request.getParameter("idx")));
+rs=pstmt.executeQuery();
 
+while(rs.next()){
+%>
+<div id="reply">
+<img src="/file/my.gif">
+<input type="text" readonly value="<%=rs.getString("reply")%>"><br>
+</div> 
+<%
+}
+rs.close();
+pstmt.close();
+conn.close();
+%>
+<input type="button" id="addreply" 
+value="더보기" style="width:200px"><br>
 </body>
 </html>

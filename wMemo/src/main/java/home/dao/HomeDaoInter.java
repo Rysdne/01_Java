@@ -6,4 +6,6 @@ public interface HomeDaoInter {
 
 	void wUidCheck();
 
+	void wRecCheck();
+
 }

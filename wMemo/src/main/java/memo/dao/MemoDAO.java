@@ -97,8 +97,11 @@ public class MemoDAO implements MemoDaoInter {
 			String title = req.getParameter("title");
 			// 5) 메모
 			String memo = req.getParameter("memo");
-			if (memo.equals(null))
-				memo = "";
+			
+//			// 이걸 이렇게 쓰면 안됨(추후 수정 필요)
+//			if (memo.equals(null))
+//				memo = "";
+			
 			// 6) 파일 이름
 			String fileName = idx;
 
@@ -184,8 +187,11 @@ public class MemoDAO implements MemoDaoInter {
 
 			// 5) 메모
 			String memo = req.getParameter("memo");
-			if (memo.equals(null))
-				memo = "";
+			
+//			// 이걸 이렇게 쓰면 안됨(추후 수정 필요)
+//			if (memo.equals(null))
+//				memo = "";
+			
 			// 6) 파일 이름
 			String fileName = idx;
 
